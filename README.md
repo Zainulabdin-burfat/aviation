@@ -48,9 +48,10 @@ This web application is an aviation marketplace built using the Laravel framewor
 Follow the instructions below to set up and run the application locally.
 
 1. Clone the repository:
-   ```bash
+```bash
    git clone https://github.com/Zainulabdin-burfat/aviation.git
 ```
+
 Certainly! Below is a basic outline for your README.md file documenting the tasks you've implemented:
 
 markdown
@@ -105,12 +106,12 @@ This web application is an aviation marketplace built using the Laravel framewor
 Follow the instructions below to set up and run the application locally.
 
 1. Clone the repository:
-   ```bash
+```bash
    git clone [repository_url]
-   ```
-2. Install dependencies:
-   ```bash
+```
 
+3. Install dependencies:
+```bash
 composer install
 npm install
 ```
