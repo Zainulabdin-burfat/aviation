@@ -49,8 +49,8 @@ Follow the instructions below to set up and run the application locally.
 
 1. Clone the repository:
    ```bash
-   git clone [repository_url]
-
+   git clone https://github.com/Zainulabdin-burfat/aviation.git
+```
 Certainly! Below is a basic outline for your README.md file documenting the tasks you've implemented:
 
 markdown
