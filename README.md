@@ -107,7 +107,7 @@ Follow the instructions below to set up and run the application locally.
 
 1. Clone the repository:
 ```bash
-   git clone [repository_url]
+   git clone https://github.com/Zainulabdin-burfat/aviation.git
 ```
 
 3. Install dependencies:
