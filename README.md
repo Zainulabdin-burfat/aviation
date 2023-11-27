@@ -128,7 +128,9 @@ php artisan key:generate
 Run migrations and seed the database:
 
 ```bash
-php artisan migrate --seed
+php artisan migrate
+php artisan create:permission
+php artisan db:seed --class=SuperAdminSeeder
 ```
 
 5. Start the development server:
