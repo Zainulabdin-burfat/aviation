@@ -40,6 +40,8 @@ Route::middleware('auth')->group(function () {
     Route::post('/create-payment-intent', [TransactionController::class, 'createPaymentIntent']);
     Route::post('/confirm-payment', [TransactionController::class, 'confirmPayment']);
 
+	Route::resource('/roles', \App\Http\Controllers\RoleController::class);
+
 });
 
 

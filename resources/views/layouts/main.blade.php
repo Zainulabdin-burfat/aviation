@@ -19,20 +19,39 @@
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <div class="container-fluid">
         <a class="navbar-brand" href="{{ route('dashboard') }}">Aviation Marketplace</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav me-auto">
                 <li class="nav-item">
-                    <a class="nav-link {{ request()->is('dashboard') ? 'active' : '' }}" href="{{ route('dashboard') }}">Dashboard</a>
+                    <a class="nav-link {{ request()->is('dashboard') ? 'active' : '' }}"
+                       href="{{ route('dashboard') }}">Dashboard</a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link {{ request()->is('listings*') ? 'active' : '' }}" href="{{ route('listings.index') }}">Listings</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link {{ request()->is('messages*') ? 'active' : '' }}" href="{{ route('messages.index') }}">Messages</a>
-                </li>
+
+                @if(auth()->user()->hasPermissionTo('listings.index') || auth()->user()->hasDirectPermissionTo('listings.index'))
+
+                    <li class="nav-item">
+                        <a class="nav-link {{ request()->is('listings*') ? 'active' : '' }}"
+                           href="{{ route('listings.index') }}">Listings</a>
+                    </li>
+                @endif
+
+                @if(auth()->user()->hasPermissionTo('messages.index') || auth()->user()->hasDirectPermissionTo('messages.index'))
+
+                    <li class="nav-item">
+                        <a class="nav-link {{ request()->is('messages*') ? 'active' : '' }}"
+                           href="{{ route('messages.index') }}">Messages</a>
+                    </li>
+                @endif
+
+                @if(auth()->user()->hasPermissionTo('roles.index') || auth()->user()->hasDirectPermissionTo('roles.index'))
+                    <li class="nav-item">
+                        <a class="nav-link {{ request()->is('roles*') ? 'active' : '' }}"
+                           href="{{ route('roles.index') }}">Roles & Permissions</a>
+                    </li>
+                @endif
             </ul>
 
             @auth
@@ -62,19 +81,19 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
 
 <script>
-    $(function() {
+    $(function () {
         @if (session('message'))
-            @if (session('status'))
-                toastr.success("{{ session('message') }}");
-            @else
-                toastr.error("{{ session('message') }}");
-            @endif
+        @if (session('status'))
+        toastr.success("{{ session('message') }}");
+        @else
+        toastr.error("{{ session('message') }}");
+        @endif
         @endif
 
         @if ($errors->any())
-            @foreach ($errors->all() as $error)
-                toastr.error("{{ $error }}");
-            @endforeach
+        @foreach ($errors->all() as $error)
+        toastr.error("{{ $error }}");
+        @endforeach
         @endif
     });
 </script>

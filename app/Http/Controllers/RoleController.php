@@ -25,7 +25,7 @@ class RoleController extends Controller
             $groupedPermissions[$module][$permission->id] = $action;
         }
 
-        return view('content.role.roles', compact('roles', 'groupedPermissions'));
+        return view('roles.index', compact('roles', 'groupedPermissions'));
     }
 
     /**
