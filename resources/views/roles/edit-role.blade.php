@@ -52,8 +52,8 @@
                                             <div class="d-flex flex-wrap">
                                                 @foreach($permission as $id => $name)
                                                     <div class="form-check me-1 me-lg-5 mb-1">
-                                                        <input name="permissions[]" @if(in_array($id, $rolePermissions)) checked @endif value="{{$id}}" class="form-check-input permission-checkbox {{$module}}" type="checkbox" />
-                                                        <label class="form-check-label">{{$name}}</label>
+                                                        <input id="permissions" name="permissions[]" @if(in_array($id, $rolePermissions)) checked @endif value="{{$id}}" class="form-check-input permission-checkbox {{$module}}" type="checkbox" />
+                                                        <label for="permissions" class="form-check-label">{{$name}}</label>
                                                     </div>
                                                 @endforeach
                                             </div>
@@ -67,7 +67,6 @@
                     </div>
                     <div class="col-12 text-center mt-4">
                         <button type="submit" class="btn btn-primary me-sm-3 me-1">Submit</button>
-{{--                        <button type="submit" class="btn btn-primary me-sm-3 me-1">Submit</button>--}}
                     </div>
                 </form>
             </div>
@@ -78,7 +77,7 @@
     <script>
         $(document).ready(function () {
             $('#selectAll').change(function () {
-
+                $('.permission-checkbox').prop('checked', $(this).prop('checked'));
             });
 
             $('.module-checkbox').change(function () {

@@ -30,28 +30,26 @@
                        href="{{ route('dashboard') }}">Dashboard</a>
                 </li>
 
-                @if(auth()->user()->hasPermissionTo('listing.index') || auth()->user()->hasDirectPermissionTo('listing.index'))
+                @permission('listing.index')
+                <li class="nav-item">
+                    <a class="nav-link {{ request()->is('listings*') ? 'active' : '' }}"
+                       href="{{ route('listings.index') }}">Listings</a>
+                </li>
+                @endpermission
 
-                    <li class="nav-item">
-                        <a class="nav-link {{ request()->is('listings*') ? 'active' : '' }}"
-                           href="{{ route('listings.index') }}">Listings</a>
-                    </li>
-                @endif
+                @permission('message.index')
+                <li class="nav-item">
+                    <a class="nav-link {{ request()->is('messages*') ? 'active' : '' }}"
+                       href="{{ route('messages.index') }}">Messages</a>
+                </li>
+                @endpermission
 
-                @if(auth()->user()->hasPermissionTo('message.index') || auth()->user()->hasDirectPermissionTo('message.index'))
-
-                    <li class="nav-item">
-                        <a class="nav-link {{ request()->is('messages*') ? 'active' : '' }}"
-                           href="{{ route('messages.index') }}">Messages</a>
-                    </li>
-                @endif
-
-                @if(auth()->user()->hasPermissionTo('role.index') || auth()->user()->hasDirectPermissionTo('role.index'))
-                    <li class="nav-item">
-                        <a class="nav-link {{ request()->is('roles*') ? 'active' : '' }}"
-                           href="{{ route('roles.index') }}">Roles & Permissions</a>
-                    </li>
-                @endif
+                @permission('role.index')
+                <li class="nav-item">
+                    <a class="nav-link {{ request()->is('roles*') ? 'active' : '' }}"
+                       href="{{ route('roles.index') }}">Roles & Permissions</a>
+                </li>
+                @endpermission
             </ul>
 
             @auth
