@@ -25,7 +25,15 @@ class RoleController extends Controller
             $groupedPermissions[$module][$permission->id] = $action;
         }
 
-        return view('roles.index', compact('roles', 'groupedPermissions'));
+        return view('content.role.roles', compact('roles', 'groupedPermissions'));
+    }
+
+    /**
+     * Show the form for creating a new resource.
+     */
+    public function create()
+    {
+        //
     }
 
     /**
@@ -54,6 +62,14 @@ class RoleController extends Controller
     }
 
     /**
+     * Display the specified resource.
+     */
+    public function show(Role $role)
+    {
+        //
+    }
+
+    /**
      * Show the form for editing the specified resource.
      */
     public function edit(Role $role)
@@ -65,7 +81,7 @@ class RoleController extends Controller
             list($module, $action) = explode('.', $permission->name);
             $groupedPermissions[$module][$permission->id] = $action;
         }
-        return view('roles.edit-role', compact('role', 'groupedPermissions'));
+        return view('content.role.edit-role', compact('role', 'groupedPermissions'));
     }
 
     /**

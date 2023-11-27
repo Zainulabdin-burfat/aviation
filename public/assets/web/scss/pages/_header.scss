@@ -1,0 +1,316 @@
+@keyframes slideDown {
+    from {
+      transform: translateY(-100%);
+    }
+    to {
+      transform: translateY(0);
+    }
+  }  
+  .top-header{
+      background-color:$greencolor;
+      padding: 8px 0;
+      .top-action{
+        li{
+          margin-right: 30px !important;
+          vertical-align: middle;
+          &:last-child{
+              margin-right: 0px !important;
+          }
+          a{
+              .contact-action{
+                  display: flex;
+                  align-items: center;
+                  .icon{
+                      width: 35px;
+                          height: 35px;
+                          background-color: #fff;
+                          border-radius: 50%;
+                           display: flex;
+                          align-items: center;
+                          justify-content: center;
+                  }
+                  .contact-txt{
+                      p{
+                          color: #FFF;
+                          font-size: 18px;
+                          line-height: 25px;
+                          font-weight: 500;
+                          margin-bottom: 0;
+                          margin-left: 5px;
+                      }
+                  }
+              }
+             }
+        }
+      }
+      .social-action{
+        float: right;
+          li{
+            margin-right: 30px;
+            &:last-child{
+              margin-right: 0px !important;
+          }
+            a{
+              color: #FFF;
+              font-size: 18px;
+              line-height: 25px;
+            }
+          }
+      }
+  }
+  .offcanvas-body{
+    .navbar-nav{
+          .nav-item{
+                .nav-link{
+                      color: #282828;
+                      font-size: 18px;
+                      line-height: 35px;
+                      &:hover{
+                            color: $greencolor;
+                      }
+                      &.active{
+                            color: $greencolor;
+                      }
+                }
+          }
+    }
+}
+.main-nav{
+      padding: 5px 0;
+  &.is-sticky {
+      width: 100%;
+      top: 0;
+      z-index: 999999;
+      background: #fff;
+    backdrop-filter: unset !important;
+    position: fixed;
+    box-shadow: 0 5px 16px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(10px);
+    animation: slideDown 0.3s ease-out;
+      .navbar{
+        .navbar-brand{
+            img{
+               width: 100px !important;
+            }
+        }
+      }
+ }
+ .main-header{
+  // z-index: 11;
+  // position: absolute;
+  // top: 0;
+  // width: 100%;
+   .main-navbar{
+    padding: 0;
+      .navbar-brand{
+          img{
+             width: 128px;
+          }
+      }
+    .left-menu{
+      .mobile-search{
+            display: none;
+      }
+      .quick-enq{
+            display: none;
+      }
+    }
+    .navbar-collapse{
+            .navbar-nav{
+                  &.m-auto{
+                        margin-right: 0 !important;
+                        margin-left: auto !important;
+                  }
+                  .nav-item{
+                        margin-right: 80px;
+                        &:last-child{
+                          margin-right: 40px;
+                        }
+                            .nav-link{
+                                  color: $blackcolor !important;
+                                  font-weight: 500;
+                                  font-size: 18px;
+                                  line-height: 20px;
+                                  position: relative;
+                                  z-index: 999;
+                                  text-transform: uppercase;
+                                  display: flex;
+                                  align-items: center;
+                                  &:hover{
+                                    color: $greencolor !important;
+                                 }
+                                    &.active{
+                                          color: $greencolor !important;
+                                    }
+                                  // &.dropdown-toggle{
+                                  //   &:after{
+                                  //         // display: none;
+                                  //         position: absolute;
+                                  //         content: '';
+                                  //         background-image: url('../images/icons/down.png');
+                                  //         background-repeat: no-repeat;
+                                  //         top: 44%;
+                                  //         width: 20px;
+                                  //         height: 12px;
+                                  //         right: -22px;
+                                  //         border: none;
+                                  //         transform: translate(-4px, -2px);
+                                  //   }
+                                  // }
+                                  .menu-icon{
+                                      background-color: #fff;
+                                      padding: 5px;
+                                      border-radius: 5px;
+                                      margin-right: 15px;
+                                      width: 35px;
+                                      height: 35px;
+                                      &.img-white{
+                                          display: none;
+                                      }
+                                  }
+                              }
+                              // .megha-menu{
+                              //       display: none;
+                              //       position: relative;
+                              //       ul{
+                              //             display: flex;
+                              //             flex-wrap: wrap;
+                              //             z-index: 2;
+                              //             position: absolute;
+                              //             width: 350px;
+                              //             border-radius: 10px;
+                              //             background-color: #fff;
+                              //             li{
+                              //                   cursor: pointer;
+                              //                   flex-basis: 100%;
+                              //                   padding: 20px 30px;
+                              //                   position: relative;
+                              //                   display: flex;
+                              //                   align-items: center;
+                              //                   &::after{
+                              //                         background-color: #ECECEC;
+                              //                         position: absolute;
+                              //                         bottom: 0;
+                              //                         width: 100%;
+                              //                         height: 1px;
+                              //                         right: 0;
+                              //                         content: "";
+                              //                         z-index: 1;
+                              //                   }
+                              //                   a{
+                              //                         font-size: 18px;
+                              //                         line-height: 20px;
+                              //                         color: #282828;
+                              //                         &.dropdown-toggle{
+                              //                               &:after{
+                              //                                     position: absolute;
+                              //                                     content: '';
+                              //                                     background-image: url('../images/icons/menu-green.png');
+                              //                                     background-repeat: no-repeat;
+                              //                                     top: 44%;
+                              //                                     width: 60px;
+                              //                                     height: 35px;
+                              //                                     right: -36px;
+                              //                                     border: none;
+                              //                                     transform: translate(-4px, -2px);
+                              //                               }
+                              //                             }
+                              //                   }
+                              //                   &:hover{
+                              //                         background-color: #05735B;
+                              //                         a{
+                              //                               &.dropdown-toggle{
+                              //                                     &:after{
+                              //                                           background-image: url('../images/icons/white-menu.png');
+                              //                                     }
+                              //                               }
+                              //                         }
+                              //                         border-top-left-radius: 10px;
+                              //                         border-top-right-radius: 10px;
+                              //                         a{
+                              //                               color: #fff;
+                              //                         }
+                              //                   } 
+                              //                    .sub-megha-menu{
+                              //                         ul{
+                              //                               &.visibile{
+                              //                                     display: block;
+                              //                                     width: 100%;
+                              //                               }
+                              //                               display: none;
+                              //                               flex-wrap: wrap;
+                              //                               z-index: 2;
+                              //                               position: absolute;
+                              //                               width: 410px;
+                              //                               border-radius: 10px;
+                              //                               background-color: #fff;
+                              //                               left: -10px;
+                              //                               transform: translateX(90%);
+                              //                               li{
+                              //                                     a{
+                              //                                           color: #282828;
+                              //                                     }
+                              //                                     &:hover{
+                              //                                           a{
+                              //                                                 color: #fff;
+                              //                                           }
+                              //                                     }
+                              //                               }
+                              //                         } 
+                              //                   }
+                                                 
+                              //             }
+                              //       }
+                              // }
+                      }
+            }
+          .main-search{
+            position: relative;
+            .mobile-search{
+                  display: none;
+            }
+            .search{
+              width: 300px;
+              border-radius: 100px;
+              border: 1px solid $greencolor;
+              background: #FFF;
+              height: 65px;
+            }
+            .menu-search-icon{
+              img{
+                width: 88px;
+                height: 50px;
+                border-radius: 100px;
+                background: $greencolor;
+                position: absolute;
+                top: 50%;
+                right: 0;
+                padding: 10px 0;
+                transform: translate(-5%, -50%);
+              }
+            }
+            .mobile-search{
+                  img{
+                    width: 88px;
+                height: 50px;
+                border-radius: 100px;
+                background: $greencolor;
+                position: absolute;
+                top: 50%;
+                right: 0;
+                padding: 10px 0;
+                transform: translate(-5%, -50%);
+                  }
+                }
+          }
+         }
+}
+.mobile_left_menu.show{
+visibility: visible !important;
+z-index: 999999 !important;
+}
+.offcanvas{
+transition: transform .1s ease-in !important;
+}
+}
+}

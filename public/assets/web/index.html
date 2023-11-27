@@ -1,0 +1,1263 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <title>KN-EXPRESS</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link rel="stylesheet" type="text/css" href="scss/main.css" />
+        <link rel="stylesheet" type="text/css" href="scss/responsive.css" />
+        <link rel="icon" type="image/x-icon" href="images/main-logo.png" />
+        <!-- <link rel="stylesheet" type="text/css" href="css/slick.min.css" />
+        <link rel="stylesheet" type="text/css" href="css/slick-theme.min.css" /> -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.0/slick.min.css" integrity="sha512-yHknP1/AwR+yx26cB1y0cjvQUMvEa2PFzt1c9LlS4pRQ5NOTZFWbhBig+X9G9eYW/8m0/4OXNx8pxJ6z57x0dw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.0/slick-theme.min.css" integrity="sha512-17EgCFERpgZKcm0j0fEq1YCJuyAWdz9KUtv1EjVuaOz8pDnh/0nZxmU6BBXwaaxqoi9PQXnRWqlcDB027hgv9A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" crossorigin="anonymous" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" />
+    </head>
+    <body>
+        <!-- header section -->
+        <header class="top-header">
+           <div class="container-ctn">
+                <div class="row align-items-center">
+                    <div class="col-xxl-9 col-xl-9 col-lg-9 col-md-7 col-sm-7 col-6">
+                        <ul class="list-inline mb-0 top-action">
+                            <li class="list-inline-item">
+                                <a href="mailto:info@company.com" class="text-decoration-none">
+                                    <div class="contact-action">
+                                        <div class="icon">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="17" viewBox="0 0 20 17" fill="none">
+                                                <path d="M15.8333 0H4.16667C3.062 0.00118574 2.00296 0.394944 1.22185 1.0949C0.440735 1.79486 0.00132321 2.74387 0 3.73377L0 12.6948C0.00132321 13.6847 0.440735 14.6337 1.22185 15.3337C2.00296 16.0336 3.062 16.4274 4.16667 16.4286H15.8333C16.938 16.4274 17.997 16.0336 18.7782 15.3337C19.5593 14.6337 19.9987 13.6847 20 12.6948V3.73377C19.9987 2.74387 19.5593 1.79486 18.7782 1.0949C17.997 0.394944 16.938 0.00118574 15.8333 0ZM4.16667 1.49351H15.8333C16.3323 1.49439 16.8196 1.62905 17.2325 1.88018C17.6453 2.1313 17.9649 2.4874 18.15 2.90263L11.7683 8.62201C11.2987 9.04118 10.6628 9.27652 10 9.27652C9.33715 9.27652 8.70131 9.04118 8.23167 8.62201L1.85 2.90263C2.03512 2.4874 2.35468 2.1313 2.76754 1.88018C3.1804 1.62905 3.66768 1.49439 4.16667 1.49351ZM15.8333 14.9351H4.16667C3.50363 14.9351 2.86774 14.699 2.3989 14.2789C1.93006 13.8588 1.66667 13.289 1.66667 12.6948V4.8539L7.05333 9.67792C7.83552 10.3771 8.89521 10.7697 10 10.7697C11.1048 10.7697 12.1645 10.3771 12.9467 9.67792L18.3333 4.8539V12.6948C18.3333 13.289 18.0699 13.8588 17.6011 14.2789C17.1323 14.699 16.4964 14.9351 15.8333 14.9351Z" fill="#087945"/>
+                                              </svg>
+                                        </div>
+                                        <div class="contact-txt">
+                                           <p>info@company.com</p>
+                                        </div>
+                                    </div>
+                                </a>
+                            </li>
+                            <li class="list-inline-item">
+                                <a href="javacript:;" class="text-decoration-none">
+                                    <div class="contact-action">
+                                        <div class="icon">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" viewBox="0 0 35 35" fill="none">
+                                                <rect width="35" height="35" rx="17.5" fill="white"/>
+                                                <path d="M17.3801 13.0012C16.7209 13.0012 16.0764 13.1967 15.5283 13.563C14.9801 13.9292 14.5529 14.4497 14.3006 15.0588C14.0483 15.6678 13.9823 16.338 14.1109 16.9845C14.2395 17.6311 14.557 18.225 15.0232 18.6911C15.4893 19.1572 16.0832 19.4747 16.7298 19.6033C17.3764 19.7319 18.0466 19.6659 18.6557 19.4136C19.2647 19.1613 19.7853 18.7341 20.1516 18.186C20.5178 17.6379 20.7133 16.9935 20.7133 16.3343C20.7133 15.4503 20.3622 14.6025 19.7371 13.9775C19.112 13.3524 18.2641 13.0012 17.3801 13.0012ZM17.3801 18.0008C17.0505 18.0008 16.7283 17.9031 16.4542 17.7199C16.1801 17.5368 15.9665 17.2765 15.8404 16.972C15.7142 16.6675 15.6812 16.3324 15.7455 16.0092C15.8098 15.6859 15.9686 15.3889 16.2016 15.1559C16.4347 14.9228 16.7317 14.7641 17.055 14.6998C17.3783 14.6355 17.7134 14.6685 18.0179 14.7946C18.3224 14.9208 18.5827 15.1344 18.7658 15.4084C18.949 15.6825 19.0467 16.0047 19.0467 16.3343C19.0467 16.7763 18.8711 17.2002 18.5586 17.5127C18.246 17.8252 17.8221 18.0008 17.3801 18.0008Z" fill="#087945"/>
+                                                <path d="M17.3789 27.9999C16.6772 28.0035 15.9849 27.839 15.3599 27.52C14.7348 27.2011 14.1953 26.737 13.7865 26.1668C10.6108 21.7863 9 18.4933 9 16.3784C9 14.1563 9.88277 12.0253 11.4541 10.454C13.0255 8.88273 15.1567 8 17.3789 8C19.6011 8 21.7323 8.88273 23.3037 10.454C24.875 12.0253 25.7578 14.1563 25.7578 16.3784C25.7578 18.4933 24.147 21.7863 20.9713 26.1668C20.5625 26.737 20.023 27.2011 19.398 27.52C18.7729 27.839 18.0806 28.0035 17.3789 27.9999ZM17.3789 9.81901C15.6393 9.82099 13.9715 10.5129 12.7414 11.7429C11.5114 12.9729 10.8194 14.6406 10.8174 16.3801C10.8174 18.055 12.3949 21.1522 15.2581 25.101C15.5012 25.4358 15.8201 25.7083 16.1887 25.8962C16.5573 26.0841 16.9652 26.182 17.3789 26.182C17.7926 26.182 18.2005 26.0841 18.5691 25.8962C18.9377 25.7083 19.2566 25.4358 19.4997 25.101C22.3629 21.1522 23.9404 18.055 23.9404 16.3801C23.9384 14.6406 23.2465 12.9729 22.0164 11.7429C20.7863 10.5129 19.1185 9.82099 17.3789 9.81901Z" fill="#087945"/>
+                                              </svg>
+                                        </div>
+                                        <div class="contact-txt">
+                                            <p>UAE - 785 15h Street, Office 478 Dubai- 81566</p>
+                                        </div>
+                                    </div>
+                                </a>
+                            </li>
+                            <li class="list-inline-item">
+                                <a href="tel:+971999902070" class="text-decoration-none">
+                                    <div class="contact-action">
+                                        <div class="icon">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" viewBox="0 0 35 35" fill="none">
+                                                <rect width="35" height="35" rx="17.5" fill="white"/>
+                                                <path d="M18.8184 8.83604C18.8184 8.61466 18.9063 8.40235 19.0629 8.24581C19.2194 8.08927 19.4317 8.00133 19.6531 8.00133C21.8661 8.00376 23.9877 8.88396 25.5526 10.4488C27.1174 12.0137 27.9976 14.1354 28 16.3484C28 16.5698 27.9121 16.7821 27.7555 16.9386C27.599 17.0951 27.3867 17.1831 27.1653 17.1831C26.9439 17.1831 26.7316 17.0951 26.5751 16.9386C26.4186 16.7821 26.3306 16.5698 26.3306 16.3484C26.3286 14.578 25.6245 12.8806 24.3726 11.6288C23.1208 10.3769 21.4235 9.67273 19.6531 9.67074C19.4317 9.67074 19.2194 9.5828 19.0629 9.42626C18.9063 9.26973 18.8184 9.05741 18.8184 8.83604ZM19.6531 13.0096C20.5386 13.0096 21.3878 13.3613 22.0139 13.9875C22.6401 14.6136 22.9918 15.4629 22.9918 16.3484C22.9918 16.5698 23.0798 16.7821 23.2363 16.9386C23.3929 17.0951 23.6052 17.1831 23.8265 17.1831C24.0479 17.1831 24.2602 17.0951 24.4168 16.9386C24.5733 16.7821 24.6612 16.5698 24.6612 16.3484C24.6599 15.0205 24.1318 13.7474 23.1929 12.8085C22.254 11.8696 20.9809 11.3415 19.6531 11.3402C19.4317 11.3402 19.2194 11.4281 19.0629 11.5846C18.9063 11.7412 18.8184 11.9535 18.8184 12.1749C18.8184 12.3962 18.9063 12.6085 19.0629 12.7651C19.2194 12.9216 19.4317 13.0096 19.6531 13.0096ZM27.2429 21.9735C27.7266 22.4585 27.9983 23.1156 27.9983 23.8006C27.9983 24.4856 27.7266 25.1427 27.2429 25.6278L26.4834 26.5034C19.6472 33.0483 3.01181 16.4168 9.45564 9.55889L10.4155 8.72419C10.9011 8.25398 11.5523 7.99386 12.2282 8.00011C12.9042 8.00636 13.5504 8.27847 14.0272 8.75758C14.0531 8.78345 15.5998 10.7926 15.5998 10.7926C16.0587 11.2747 16.3142 11.9152 16.3131 12.5809C16.3121 13.2465 16.0545 13.8861 15.594 14.3668L14.6274 15.5821C15.1623 16.8818 15.9488 18.0631 16.9416 19.0579C17.9344 20.0527 19.114 20.8416 20.4126 21.3791L21.6355 20.4067C22.1162 19.9466 22.7557 19.6893 23.4211 19.6883C24.0866 19.6874 24.7268 19.9429 25.2088 20.4017C25.2088 20.4017 27.2171 21.9476 27.2429 21.9735ZM26.0944 23.1871C26.0944 23.1871 24.097 21.6504 24.0711 21.6245C23.8991 21.454 23.6668 21.3584 23.4246 21.3584C23.1825 21.3584 22.9501 21.454 22.7782 21.6245C22.7556 21.6479 21.0721 22.9893 21.0721 22.9893C20.9586 23.0796 20.8236 23.1388 20.6803 23.161C20.537 23.1833 20.3904 23.1678 20.2549 23.1162C18.5725 22.4898 17.0444 21.5091 15.7741 20.2407C14.5038 18.9722 13.5209 17.4455 12.8921 15.7641C12.8363 15.6267 12.8181 15.477 12.8394 15.3303C12.8607 15.1836 12.9206 15.0452 13.0131 14.9294C13.0131 14.9294 14.3544 13.2449 14.377 13.2232C14.5475 13.0513 14.6432 12.8189 14.6432 12.5768C14.6432 12.3346 14.5475 12.1022 14.377 11.9303C14.3511 11.9052 12.8144 9.90613 12.8144 9.90613C12.6399 9.74963 12.4121 9.66581 12.1778 9.67187C11.9434 9.67792 11.7203 9.77338 11.5541 9.93868L10.5942 10.7734C5.88483 16.436 20.3008 30.0526 25.263 25.3632L26.0234 24.4867C26.2016 24.3217 26.3087 24.0938 26.3219 23.8513C26.3351 23.6088 26.2536 23.3706 26.0944 23.1871Z" fill="#087945"/>
+                                              </svg>
+                                        </div>
+                                        <div class="contact-txt">
+                                            <p>(+971) 99990 2070</p>
+                                        </div>
+                                    </div>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col-xxl-3 col-xl-3 col-lg-3 col-md-5 col-sm-5 col-6 d-flex justify-content-end">
+                        <ul class="list-inline mb-0 social-action">
+                            <!-- <li class="list-inline-item">
+                                <a class="iconBox" target="_blank" href="javascript:;"><i class="fa-brands fa-whatsapp"></i></a>
+                            </li> -->
+                            <li class="list-inline-item">
+                                <a class="iconBox" target="_blank" href="javascript:;"><i class="fa-brands fa-instagram"></i></a>
+                            </li>
+                            <li class="list-inline-item">
+                                <a class="iconBox" target="_blank" href="javascript:;"><i class="fa-brands fa-facebook"></i></a>
+                            </li>
+                            <li class="list-inline-item">
+                                <a class="iconBox" target="_blank" href="javascript:;"><i class="fa-brands fa-linkedin"></i></a>
+                            </li>
+                            <li class="list-inline-item last">
+                                <a class="iconBox" target="_blank" href="javascript:;"><i class="fa-brands fa-twitter"></i></a>
+                            </li>
+                            <!-- <li class="list-inline-item">
+                                <a class="iconBox" target="_blank" href="javascript:;"><i class="fa-brands fa-youtube"></i></a>
+                            </li>
+                            <li class="list-inline-item">
+                                <a class="iconBox" target="_blank" href="javascript:;"><i class="fa-brands fa-snapchat"></i></a>
+                            </li>
+                            <li class="list-inline-item">
+                                <a class="iconBox" target="_blank" href="javascript:;"><i class="fa-brands fa-pinterest"></i></a>
+                            </li>
+                            <li class="list-inline-item">
+                                <a class="iconBox" target="_blank" href="javascript:;"><i class="fa-brands fa-tiktok"></i></a>
+                            </li> -->
+                        </ul>
+                    </div>
+                </div>
+           </div>
+        </header>
+        <section class="main-nav">
+            <div class="container-ctn">
+                <div class="main-header">
+                    <nav class="navbar navbar-expand-lg navbar-light main-navbar">
+                        <div class="container-fluid">
+                            <div class="hamburg-menu-wrapper">
+                                <a class="navbar-brand" href="index.html">
+                                    <img src="images/main-logo.png" class="img-fluid main-logo" alt="main_logo" />
+                                </a>
+                                <div class="left-menu">
+                                    <button class="btn mobile-search" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasTop" aria-controls="offcanvasTop"><img src="images/icons/menu-search.svg" class="img-fluid"></button>
+                                    <div class="quick-enq-blue-bg" data-bs-toggle="modal" data-bs-target="#enquiry-modal">
+                                        <a href="javascript:;" class="quick-enq Q-btn text-decoration-none">
+                                            Enquiry
+                                        </a>
+                                    </div>
+                                    <a class="navbar-toggler" type="button" data-bs-toggle="offcanvas" href="#mobileOffcanvasExample" role="button" aria-controls="offcanvasExample">
+                                        <img src="images/hamburgerMenu.png" alt="" />
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                                <ul class="navbar-nav m-auto align-items-center">
+                                    <li class="nav-item">
+                                        <a class="nav-link active" href="index.html" id="menu">
+                                           Home
+                                        </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="#counter" id="menu">
+                                            About
+                                        </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="#services">
+                                            Services
+                                        </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="#contact">
+                                            Contact us
+                                        </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <div class="main-search">
+                                            <input type="search" class="form-control search" name="search" placeholder="Enter your track Id">
+                                            <div class="menu-search-icon" data-bs-toggle="modal" data-bs-target="#ship-track-modal">
+                                                <img src="images/icons/menu-search.svg" class="img-fluid">
+                                            </div>
+                                            <!-- <div class="mobile-search"  data-bs-toggle="offcanvas" data-bs-target="#offcanvasTop" aria-controls="offcanvasTop">
+                                                <img src="images/icons/menu-search.svg" class="img-fluid">
+                                            </div> -->
+                                            <button class="btn mobile-search" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasTop" aria-controls="offcanvasTop"><img src="images/icons/menu-search.svg" class="img-fluid" data-bs-toggle="modal" data-bs-target="#ship-track-modal"></button>
+                                        </div>
+                                    </li>
+                                </ul>
+                                <form class="d-flex">
+                                    <div class="quick-enq-blue-bg" data-bs-toggle="modal" data-bs-target="#enquiry-modal">
+                                        <a href="#" class="quick-enq Q-btn text-decoration-none">
+                                            Enquiry
+                                        </a>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </nav>
+
+                </div>
+                <div class="offcanvas offcanvas-start mobile_left_menu" tabindex="-1" id="mobileOffcanvasExample" aria-labelledby="offcanvasExampleLabel" style="visibility: hidden;" aria-hidden="true">
+                    <div class="offcanvas-header">
+                        <a class="navbar-brand" href="index.html">
+                            <img src="images/main-logo.png" alt="pentacode courses">
+                        </a>
+                        <button aria-controls="offcanvasExample" role="button" href="#mobileOffcanvasExample" data-bs-toggle="offcanvas" class="btn-close text-reset" type="button"></button>
+                    </div>
+                    <div class="offcanvas-body">
+                        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                            <li class="nav-item">
+                                <a class="nav-link"  href="index.html" >Home</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link abt"  href="javascript:;" >About us</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link ser"  href="javascript:;">Services</a>
+                            </li>
+                            <li class="nav-item last">
+                                <a class="nav-link car"  href="javascript:;">Contact Us</a>
+                            </li>
+                        </ul>
+
+                    </div>
+                </div>
+                <!-- <button class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasTop" aria-controls="offcanvasTop">Toggle top offcanvas</button> -->
+                <div class="offcanvas offcanvas-top" tabindex="-1" id="offcanvasTop" aria-labelledby="offcanvasTopLabel">
+                <div class="offcanvas-header">
+                    <!-- <h5 id="offcanvasTopLabel">Offcanvas top</h5> -->
+                    <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                </div>
+                <div class="offcanvas-body">
+                    <div class="main-search">
+                        <input type="search" class="form-control search" name="search" placeholder="Enter your track Id">
+                        <div class="menu-search-icon" data-bs-toggle="modal" data-bs-target="#ship-track-modal">
+                            <img src="images/icons/menu-search.svg" class="img-fluid">
+                        </div>
+                    </div>
+                </div>
+                </div>
+           </div>
+        </section>
+        <!-- end of heade section -->
+        <!-- hero slider -->
+        <section class="hero-slider-wrapper" id="home">
+            <div class="hero-slider">
+                <div>
+                    <div class="image-slide">
+                        <img src="images/hero-slider.png" alt="">
+                        <div class="slider-wrapper">
+                            <div class="slider-sml-txt">
+                                <div class="mid-title">
+                                    <p>International Logistics</p>
+                                </div>
+                                <div class="larg-txt">
+                                    <h2>We Make Your Cargo Transport Simple</h2>
+                                </div>
+                            </div>
+                            <div class="main-search">
+                                <div class="search-tagline">
+                                    <h4>Check Shipment Status</h4>
+                                </div>
+                                <input type="search" class="form-control search" name="search" placeholder="Enter your track Id">
+                                <div class="menu-search-icon" data-bs-toggle="modal" data-bs-target="#ship-track-modal">
+                                    <img src="images/icons/menu-search.svg" class="img-fluid">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <div class="image-slide">
+                        <img src="images/hero-slider.png" alt="">
+                        <div class="slider-wrapper">
+                            <div class="slider-sml-txt">
+                                <div class="mid-title">
+                                    <p>International Logistics 2</p>
+                                </div>
+                                <div class="larg-txt">
+                                    <h2>We Make Your Cargo Transport Simple</h2>
+                                </div>
+                            </div>
+                            <div class="main-search">
+                                <div class="search-tagline">
+                                    <h4>Check Shipment Status</h4>
+                                </div>
+                                <input type="search" class="form-control search" name="search" placeholder="Enter your track Id">
+                                <div class="menu-search-icon" data-bs-toggle="modal" data-bs-target="#ship-track-modal">
+                                    <img src="images/icons/menu-search.svg" class="img-fluid">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <div class="image-slide">
+                        <img src="images/hero-slider.png" alt="">
+                        <div class="slider-wrapper">
+                            <div class="slider-sml-txt">
+                                <div class="mid-title">
+                                    <p>International Logistics 3</p>
+                                </div>
+                                <div class="larg-txt">
+                                    <h2>We Make Your Cargo Transport Simple</h2>
+                                </div>
+                            </div>
+                            <div class="main-search">
+                                <div class="search-tagline">
+                                    <h4>Check Shipment Status</h4>
+                                </div>
+                                <input type="search" class="form-control search" name="search" placeholder="Enter your Id">
+                                <div class="menu-search-icon" data-bs-toggle="modal" data-bs-target="#ship-track-modal">
+                                    <img src="images/icons/menu-search.svg" class="img-fluid">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- <img src="images/slider-crane.png" class="s-crane" alt=""> -->
+        </section>
+        <!-- end of hero slider -->
+
+        <!-- approach section -->
+        <section class="approach-wrapper" id="counter">
+            <div class="common-container-right">
+                <div class="row">
+                    <div class="col-xxl-5 col-xl-5 col-lg-5 col-md-12 col-sm-12 col-12">
+                        <div class="left-wrapper">
+                            <div class="mid-title">
+                                <p>Creative Approach</p>
+                            </div>
+                            <div class="larg-txt">
+                                <h2>We know how to do logistics well</h2>
+                            </div>
+                            <div class="discription">
+                                <p>
+                                    It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English.
+                                </p><br>
+                                <p>Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years.</p>
+                            </div>
+                            <ul class="approach-counter list-inline mb-0">
+                                <li class="list-inline-item">
+                                    <div class="aprch-box1">
+                                        <div class="box">
+                                            <div class="discription">
+                                                <p>Professionals</p>
+                                            </div>
+                                            <div class="counter-big">
+                                                <h3 class="counter timer" data-to="100" data-speed="2000">
+                                                    100 +
+                                                </h3>
+                                                <!-- <strong class="timer count-title count-number aboutCount" data-to="100" data-speed="2000">100+</strong> -->
+                                            </div>
+                                        </div>
+                                        <div class="aprch-img">
+                                            <img src="images/prof.png" class="img-fluid" alt="counter image">
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="list-inline-item">
+                                    <div class="aprch-box1 apx-2">
+                                        <div class="box">
+                                            <div class="discription">
+                                                <p>World Offices</p>
+                                            </div>
+                                            <div class="counter-big">
+                                                <h3 class="counter timer" data-to="24" data-speed="2500">
+                                                    24
+                                                </h3>
+                                            </div>
+                                        </div>
+                                        <div class="aprch-img">
+                                            <img src="images/office.png" class="img-fluid" alt="counter image">
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-xxl-7 col-xl-7 col-lg-7 col-md-12 col-sm-12 col-12">
+                        <div class="right-wrapper">
+                            <div class="ap-img">
+                                <img src="images/approach.png" class="img-fluid" alt="approach">
+                                <div class="red-box">
+                                        <img src="images/green-square.png" class="img-fluid" alt="">
+                                        <div class="box-content">
+                                            <div class="solu-title">
+                                                <h4>Flexible, Improved & Accelerated Solutions!</h4>
+                                            </div>
+                                            <div class="discription">
+                                                <p>Providing full range of service in the sphere transportation worldwide.</p>
+                                            </div>
+                                            <div class="explr">
+                                                <a href="javascript:;" class="text-decoration-none" data-bs-toggle="modal" data-bs-target="#enquiry-modal"><span class="arrow-img"><img src="images/right-square-arrow.png" alt=""></span>Enquire Now</a>
+                                            </div>
+                                        </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- end of approach section -->
+        <!-- why choose section -->
+        <section class="why-choose-wrapper" data-aos="fade-up">
+            <div class="container-ctn">
+                <div class="row">
+                    <div class="col-xxl-5 col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12">
+                        <div class="left-wrapper">
+                            <div class="mid-title">
+                                <p>Why Choose Us</p>
+                            </div>
+                            <div class="larg-txt">
+                                <h2>We support supply chain management</h2>
+                            </div>
+                            <ul class="list-inline mangment mb-0">
+                                <li>
+                                    <div class="flex-wrapper">
+                                        <div class="left">
+                                            <div class="icon">
+                                                <img src="images/icons/safe.svg" alt="mangment">
+                                            </div>
+                                        </div>
+                                        <div class="right">
+                                            <h3>
+                                                Safe & Secure Delivery Services
+                                            </h3>
+                                            <div class="discription">
+                                                <p>
+                                                    Lorem Ipsum has been the industry's standard dummy text ever since the 1500
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="flex-wrapper">
+                                        <div class="left">
+                                            <div class="icon">
+                                                <img src="images/icons/saving.svg" alt="mangment">
+                                            </div>
+                                        </div>
+                                        <div class="right">
+                                            <h3>
+                                                Cost Savings
+                                            </h3>
+                                            <div class="discription">
+                                                <p>
+                                                    Lorem Ipsum has been the industry's standard dummy text ever since the 1500
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="flex-wrapper">
+                                        <div class="left">
+                                            <div class="icon">
+                                                <img src="images/icons/transport.svg" alt="mangment">
+                                            </div>
+                                        </div>
+                                        <div class="right">
+                                            <h3>
+                                                Transport Optimization
+                                            </h3>
+                                            <div class="discription">
+                                                <p>
+                                                    Lorem Ipsum has been the industry's standard dummy text ever since the 1500
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-xxl-7 col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12 d-flex justify-content-end">
+                        <div class="right-wrapper" data-aos="fade-up">
+                            <img src="images/why-right.png" class="img-fluid" alt="why choose us">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- end of why choose section -->
+        <!-- what we do section -->
+        <section class="do-wrapper" data-aos="fade-up" id="services">
+            <div class="container-ctn">
+                <div class="row">
+                    <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+                        <div class="mid-title">
+                            <p>What We Do</p>
+                        </div>
+                        <div class="larg-txt">
+                            <h2>Connecting cargo markets and the world</h2>
+                        </div>
+                    </div>
+                </div>
+                <div class="cargo-slider-wrapper">
+                    <div class="cargo-slider">
+                        <div>
+                            <div class="solution-wrapper-content">
+                                <div class="solution-box">
+                                    <div class="solution-img">
+                                        <img src="images/cargo-1.png" class="img-fluid" alt="solution image">
+                                    </div>
+                                    <div class="solution-content-area">
+                                        <div class="solution-title">
+                                            <h3>Export Logistics</h3>
+                                        </div>
+                                        <div class="small-discription">
+                                            <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="overlay">
+                                    <div class="text">
+                                            <div class="ovr-img">
+                                                <img src="images/cargo-1.png" alt="overlay image">
+                                            </div>
+                                        <div class="overlay-area">
+                                            <div class="cargo-img">
+                                                <img src="images/export.png" class="img-fluid" alt="solution image" />
+                                            </div>
+                                            <a href="javascript:;" class="text-decoration-none" target="_blank"><h3 data-bs-toggle="tooltip">Export Logistics</h3></a>
+                                        </div>
+                                    </div>
+                                  </div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="solution-wrapper-content">
+                                <div class="solution-box">
+                                    <div class="solution-img">
+                                        <img src="images/cargo-1.png" class="img-fluid" alt="solution image">
+                                    </div>
+                                    <div class="solution-content-area">
+                                        <div class="solution-title">
+                                            <h3>Import Logistics</h3>
+                                        </div>
+                                        <div class="small-discription">
+                                            <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="overlay">
+                                    <div class="text">
+                                            <div class="ovr-img">
+                                                <img src="images/cargo-1.png" alt="overlay image">
+                                            </div>
+                                        <div class="overlay-area">
+                                            <div class="cargo-img">
+                                                <img src="images/export.png" class="img-fluid" alt="solution image" />
+                                            </div>
+                                            <a href="javascript:;" class="text-decoration-none" target="_blank"><h3 data-bs-toggle="tooltip">Import Logistics</h3></a>
+                                        </div>
+                                    </div>
+                                  </div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="solution-wrapper-content">
+                                <div class="solution-box">
+                                    <div class="solution-img">
+                                        <img src="images/cargo-express.png" class="img-fluid" alt="solution image">
+                                    </div>
+                                    <div class="solution-content-area">
+                                        <div class="solution-title">
+                                            <h3>Cargo Express</h3>
+                                        </div>
+                                        <div class="small-discription">
+                                            <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="overlay">
+                                    <div class="text">
+                                            <div class="ovr-img">
+                                                <img src="images/cargo-express.png" alt="overlay image">
+                                            </div>
+                                        <div class="overlay-area">
+                                            <div class="cargo-img">
+                                                <img src="images/export.png" class="img-fluid" alt="solution image" />
+                                            </div>
+                                            <a href="javascript:;" class="text-decoration-none" target="_blank"><h3 data-bs-toggle="tooltip">Cargo Express</h3></a>
+                                        </div>
+                                    </div>
+                                  </div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="solution-wrapper-content">
+                                <div class="solution-box">
+                                    <div class="solution-img">
+                                        <img src="images/brok-service.png" class="img-fluid" alt="solution image">
+                                    </div>
+                                    <div class="solution-content-area">
+                                        <div class="solution-title">
+                                            <h3>Brokerage Services</h3>
+                                        </div>
+                                        <div class="small-discription">
+                                            <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="overlay">
+                                    <div class="text">
+                                            <div class="ovr-img">
+                                                <img src="images/overlay.png" alt="overlay image">
+                                            </div>
+                                        <div class="overlay-area">
+                                            <div class="cargo-img">
+                                                <img src="images/export.png" class="img-fluid" alt="solution image" />
+                                            </div>
+                                            <a href="javascript:;" class="text-decoration-none" target="_blank"><h3 data-bs-toggle="tooltip">Brokerage Services</h3></a>
+                                        </div>
+                                    </div>
+                                  </div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="solution-wrapper-content">
+                                <div class="solution-box">
+                                    <div class="solution-img">
+                                        <img src="images/cargo-1.png" class="img-fluid" alt="solution image">
+                                    </div>
+                                    <div class="solution-content-area">
+                                        <div class="solution-title">
+                                            <h3>Export Logistics</h3>
+                                        </div>
+                                        <div class="small-discription">
+                                            <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="overlay">
+                                    <div class="text">
+                                            <div class="ovr-img">
+                                                <img src="images/overlay.png" alt="overlay image">
+                                            </div>
+                                        <div class="overlay-area">
+                                            <div class="cargo-img">
+                                                <img src="images/export.png" class="img-fluid" alt="solution image" />
+                                            </div>
+                                            <a href="javascript:;" class="text-decoration-none" target="_blank"><h3 data-bs-toggle="tooltip">Export Logistics</h3></a>
+                                        </div>
+                                    </div>
+                                  </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- end of what we do section -->
+        <!-- contact wrapper -->
+        <section class="cont-wrapper" data-aos="fade-up" id="contact">
+            <div class="common-container-right">
+                <div class="row">
+                    <div class="col-xxl-7 col-xl-7 col-lg-7 col-md-6 col-sm-12 col-12">
+                        <div class="left-form">
+                            <div class="f-title">
+                                <h3>Contact</h3>
+                             </div>
+                             <div class="larg-txt f-tagline">
+                                <h2>get in touch with us</h2>
+                            </div>
+                                <div class="contact-form course-enqury-wrapper">
+                                    <div class="course-eq-box">
+                                        <form class="enq-form" id="enquiry-form">
+                                            <div class="row">
+                                                <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12">
+                                                    <div class="filed-btm">
+                                                        <label for="fname" class="form-label">Full Name</label>
+                                                        <input type="text" class="form-control" id="fname" placeholder="Full Name" />
+                                                        <div class="filed-icon">
+                                                            <img src="images/icons/form-user.svg" class="img-fluid" alt="field" />
+                                                        </div>
+                                                        <div id="error-name" class="error-message">Please enter your full name.</div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12">
+                                                    <div class="filed-btm">
+                                                        <label for="email" class="form-label">Email address</label>
+                                                        <input type="text" class="form-control" id="email" placeholder="johndoe@gmail.com" />
+                                                        <div class="filed-icon">
+                                                            <img src="images/icons/form-email.svg" class="img-fluid" alt="field" />
+                                                        </div>
+                                                        <div id="error-email" class="error-message">Please enter your email address.</div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12">
+                                                    <div class="filed-btm">
+                                                        <label for="number" class="form-label">Phone number</label>
+                                                        <input type="text" class="form-control" id="number" placeholder="+1 000 000 00" />
+                                                        <div class="filed-icon">
+                                                            <img src="images/icons/form-phone.svg" class="img-fluid" alt="field" />
+                                                        </div>
+                                                        <div id="error-number" class="error-message">Please enter your phone number.</div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12">
+                                                    <div class="filed-btm">
+                                                        <label for="msg" class="form-label">Services</label>
+                                                        <select class="form-select form-control" id="service" aria-label="Default select example">
+                                                            <option value="" selected disabled>Select any services</option>
+                                                            <option value="1">One</option>
+                                                            <option value="2">Two</option>
+                                                            <option value="3">Three</option>
+                                                        </select>
+                                                        <div class="filed-icon">
+                                                            <img src="images/icons/service.svg" class="img-fluid" alt="field" />
+                                                        </div>
+                                                        <div id="error-service" class="error-message">Please select services</div>
+                                                    </div>
+                                                </div>
+                                                <div class="col--12">
+                                                    <div class="filed-btm">
+                                                        <label for="msg" class="form-label">Message</label>
+                                                        <textarea class="form-control" placeholder="Say Something" id="msg"></textarea>
+                                                        <div class="filed-icon">
+                                                            <img src="images/icons/form-msg.svg" class="img-fluid" alt="field" />
+                                                        </div>
+                                                        <div id="error-msg" class="error-message">Please enter message</div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-12">
+                                                    <div class="filed-btm mt-4 mb-0">
+                                                        <div class="col-xxl-3 col-xl-3 col-lg-3 col-md-3 col-sm-12 col-12 d-flex justify-content-end">
+                                                            <div class="red-btn-bg">
+                                                                <!-- <a href="" >Send</a> -->
+                                                                <button type="submit" class="red-btn text-decoration-none">Send</button>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                        </div>
+                    </div>
+                    <div class="col-xxl-5 col-xl-5 col-lg-5 col-md-6 col-sm-12 col-12">
+                        <div class="mask-img">
+                            <img src="images/contact-img.png" class="img-fluid" alt="contact" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- end of contact wrapper -->
+       <!-- get in touch -->
+       <section class="get-wrapper" >
+            <div class="container-ctn">
+                <div class="row align-items-center">
+                    <div class="col-xxl-9 col-xl-9 col-lg-9 col-md-9 col-sm-12 col-12">
+                        <div class="left-content">
+                            <div class="small-title">
+                                <p>Looking for something specific?</p>
+                            </div>
+                            <div class="larg-txt">
+                                <h2>Get in touch with our expert team!</h2>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xxl-3 col-xl-3 col-lg-3 col-md-3 col-sm-12 col-12 d-flex justify-content-end">
+                       <div class="right-conteten">
+                        <div class="red-btn-bg">
+                            <a href="#contact" class="red-btn text-decoration-none">Contact</a>
+                        </div>
+                       </div>
+                    </div>
+                </div>
+            </div>
+       </section>
+       <!-- end of get in touch -->
+
+       <!-- footer section -->
+        <section class="footer-wrapper" data-aos="fade-up">
+            <div class="container-ctn">
+                <div class="row">
+                    <div class="col-xxl-4 col-xl-4 col-lg-4 col-md-5 col-sm-12 col-12">
+                        <div class="footer-right-box">
+                            <div class="footer-logo">
+                                <a href="index.html" class="text-decoration-none">
+                                    <img src="images/foo-logo.png" class="img-fluid" alt="footer logo" />
+                                </a>
+                            </div>
+                            <div class="discription">
+                                <p>It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently.</p>
+                            </div>
+                            <ul class="list-inline mb-0 social-action">
+                                <!-- <li class="list-inline-item">
+                                    <a class="iconBox" target="_blank" href="javascript:;"><i class="fa-brands fa-whatsapp"></i></a>
+                                </li> -->
+                                <li class="list-inline-item">
+                                    <a class="iconBox" target="_blank" href="javascript:;"><i class="fa-brands fa-instagram"></i></a>
+                                </li>
+                                <li class="list-inline-item">
+                                    <a class="iconBox" target="_blank" href="javascript:;"><i class="fa-brands fa-facebook"></i></a>
+                                </li>
+                                <li class="list-inline-item">
+                                    <a class="iconBox" target="_blank" href="javascript:;"><i class="fa-brands fa-linkedin"></i></a>
+                                </li>
+                                <li class="list-inline-item last">
+                                    <a class="iconBox" target="_blank" href="javascript:;"><i class="fa-brands fa-twitter"></i></a>
+                                </li>
+                                <!-- <li class="list-inline-item">
+                                    <a class="iconBox" target="_blank" href="javascript:;"><i class="fa-brands fa-youtube"></i></a>
+                                </li>
+                                <li class="list-inline-item">
+                                    <a class="iconBox" target="_blank" href="javascript:;"><i class="fa-brands fa-snapchat"></i></a>
+                                </li>
+                                <li class="list-inline-item">
+                                    <a class="iconBox" target="_blank" href="javascript:;"><i class="fa-brands fa-pinterest"></i></a>
+                                </li>
+                                <li class="list-inline-item">
+                                    <a class="iconBox" target="_blank" href="javascript:;"><i class="fa-brands fa-tiktok"></i></a>
+                                </li> -->
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-xxl-2 col-xl-2 col-lg-2 col-md-3 col-sm-3 col-12">
+                        <div class="footer-content">
+                            <div class="foot-title">
+                                <h3>Quick Links</h3>
+                            </div>
+                            <div class="foo-links">
+                                <ul class="list-inline mb-0 li-img">
+                                    <li>
+                                        <a href="#home" class="nav-link text-decoration-none">Home</a>
+                                    </li>
+                                    <li>
+                                        <a href="#counter" class="nav-link text-decoration-none">About</a>
+                                    </li>
+                                    <li>
+                                        <a href="#services" class="nav-link text-decoration-none">Services</a>
+                                    </li>
+                                    <li>
+                                        <a href="#contact" class="nav-link text-decoration-none">contact</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xxl-3 col-xl-3 col-lg-3 col-md-4 col-sm-5 col-12">
+                        <div class="footer-content">
+                            <div class="foot-title">
+                                <h3>Contact</h3>
+                            </div>
+                            <div class="adress">
+                                <ul class="list-inline">
+                                    <li>
+                                       <div class="flex-wrapper">
+                                        <div class="left">
+                                            <img src="images/icons/location-black.svg" class="img-fluid" alt="location">
+                                        </div>
+                                        <div class="right">
+                                            <p>UAE —785 15h Street, Office 478 Dubai- 81566</p>
+                                        </div>
+                                       </div>
+                                    </li>
+                                    <li>
+                                        <div class="flex-wrapper">
+                                            <div class="left">
+                                                <img src="images/icons/time-black.svg" class="img-fluid" alt="location">
+                                            </div>
+                                            <div class="right">
+                                                <p>Mon - Sat : 08.00 to 18.00,</p>
+                                                <p> Sunday - Holiday</p>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="flex-wrapper">
+                                            <div class="left">
+                                                <img src="images/icons/mail-black.svg" class="img-fluid" alt="location">
+                                            </div>
+                                            <div class="right">
+                                                <div class="mail-1">
+                                                    <a href="mailto:info@company.com" class="text-decoration-none">
+                                                        info@company.com,
+                                                    </a>
+                                                </div>
+                                                <div class="mail-2">
+                                                    <a href="mailto:sales@company.com" class="text-decoration-none">
+                                                        sales@company.com
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xxl-3 col-xl-3 col-lg-3 col-md-6 col-sm-4 col-12">
+                        <div class="footer-content">
+                            <div class="foot-title">
+                                <h3>Call Us</h3>
+                            </div>
+                            <div class="call-info">
+                                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+                            </div>
+                            <div class="adress">
+                                <ul class="list-inline red-call">
+                                    <li>
+                                        <div class="flex-wrapper">
+                                            <div class="left">
+                                                <img src="images/icons/call-white.svg" class="img-fluid" alt="location">
+                                            </div>
+                                            <div class="right">
+                                               <div class="call-1">
+                                                <a href="tel:(+971) 8888 999900" class="text-decoration-none">
+                                                    (+971) 8888 999900,
+                                                </a>
+                                               </div>
+                                                <div class="call-2">
+                                                    <a href="tel:(+971) 78789 999900" class="text-decoration-none">
+                                                        (+971) 78789 999900
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="c-write-wrapper">
+            <div class="container-ctn">
+                <div class="row align-items-center">
+                    <div class="col-12">
+                        <div class="c-right">
+                            <div class="c">
+                                <p>All Rights Reserved by MK Trading</p>
+                            </div>
+                            <div class="brd"></div>
+                            <div class="designby">
+                                <p>Designed By</p>
+                                <span><img src="images/pentacode-logo.png" class="img-fluid" alt="pentacode"></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- end of footer section -->
+        <div class="leftFixedBox">
+            <div class="btn-group dropstart"></div>
+            <div class="QuickSideRightBar QuickSideRightBarWhatsapp">
+                <a href="tel:+971999902070">
+                    <div class="iconBox animateBox">
+                        <img class="img-fluid" src="images/icons/call.png" alt="" />
+                    </div>
+                    <div class="slideLeft">
+                        <span class="textRight">(+971) 545810022</span>
+                    </div>
+                </a>
+            </div>
+            <div class="QuickSideRightBar QuickSideRightBarWhatsapp">
+                <a href="https://wa.me/+971999902070" target="blank">
+                    <div class="iconBox">
+                        <img class="img-fluid" src="images/icons/wp.png" alt="" />
+                    </div>
+                    <div class="slideLeft">
+                        <span class="textRight">(+971) 545810022</span>
+                    </div>
+                </a>
+            </div>
+        </div>
+        <div class="fixedBottomBar">
+            <div class="">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="fixedWrapper">
+                            <!-- <div class="btn-group dropup">
+                                <button type="button" class="dropdown-toggle iconBox" data-bs-toggle="dropdown" aria-expanded="false">
+                                    <img class="img-fluid" src="images/icons/share.png" alt="" />
+                                </button>
+                                <ul class="dropdown-menu">
+                                    <li >
+                                        <a class="iconBox" target="_blank" href="javascript:;"><i class="fa-brands fa-twitter"></i></a>
+                                    </li>
+                                    <li>
+                                        <a class="iconBox" target="_blank" href="javascript:;"><i class="fa-brands fa-linkedin"></i></a>
+                                    </li>
+                                    <li>
+                                        <a class="iconBox" target="_blank" href="javascript:;"><i class="fa-brands fa-facebook"></i></a>
+                                    </li>
+                                    <li class="last">
+                                        <a class="iconBox" target="_blank" href="javascript:;"><i class="fa-brands fa-instagram"></i></a>
+                                    </li>
+                                </ul>
+                            </div> -->
+
+                            <a class="a-width animateBox" href="tel:+971999902070">
+
+                                <span class="iconBox animateBox">
+                                    <img class="img-fluid" src="images/icons/call.png" alt="" />
+                                    <span>Call Us</span>
+                                </span>
+                            </a>
+                            <a class="a-width" href="https://wa.me/+971999902070">
+                            <span class="iconBox">
+                                <img class="img-fluid" src="images/icons/wp.png" alt="" />
+                                <span>Whatsapp</span>
+                            </span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- end of sidebar -->
+        <!-- modal -->
+        <div class="modal fade enquiry-form" id="enquiry-modal" tabindex="-1" aria-labelledby="EnquiryModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-xl  modal-dialog-centered">
+                <div class="modal-content en-modal-form">
+                    <div class="form-title">
+                        <h2>Enquiry</h2>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="modal-form">
+                            <div class="contact-form course-enqury-wrapper">
+                                <div class="course-eq-box">
+                                    <form class="enq-form" id="modal-form">
+                                        <div class="row">
+                                            <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12">
+                                                <div class="filed-btm">
+                                                    <label for="fname" class="form-label">Full Name</label>
+                                                    <input type="text" class="form-control" id="fname" placeholder="Full Name" />
+                                                    <div class="filed-icon">
+                                                        <img src="images/icons/form-user.svg" class="img-fluid" alt="field" />
+                                                    </div>
+                                                    <div id="error-name" class="error-message">Please enter your full name.</div>
+                                                </div>
+                                            </div>
+                                            <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12">
+                                                <div class="filed-btm">
+                                                    <label for="email" class="form-label">Email address</label>
+                                                    <input type="text" class="form-control" id="email" placeholder="johndoe@gmail.com" />
+                                                    <div class="filed-icon">
+                                                        <img src="images/icons/form-email.svg" class="img-fluid" alt="field" />
+                                                    </div>
+                                                    <div id="error-email" class="error-message">Please enter your email address.</div>
+                                                </div>
+                                            </div>
+                                            <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12">
+                                                <div class="filed-btm">
+                                                    <label for="number" class="form-label">Phone number</label>
+                                                    <input type="text" class="form-control" id="number" placeholder="+1 000 000 00" />
+                                                    <div class="filed-icon">
+                                                        <img src="images/icons/form-phone.svg" class="img-fluid" alt="field" />
+                                                    </div>
+                                                    <div id="error-number" class="error-message">Please enter your phone number.</div>
+                                                </div>
+                                            </div>
+                                            <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12">
+                                                <div class="filed-btm">
+                                                    <label for="msg" class="form-label">Services</label>
+                                                    <select class="form-select form-control" id="service" aria-label="Default select example">
+                                                        <option value="" selected disabled>Select any services</option>
+                                                        <option value="1">One</option>
+                                                        <option value="2">Two</option>
+                                                        <option value="3">Three</option>
+                                                    </select>
+                                                    <div class="filed-icon">
+                                                        <img src="images/icons/service.svg" class="img-fluid" alt="field" />
+                                                    </div>
+                                                    <div id="error-service" class="error-message">Please select services</div>
+                                                </div>
+                                            </div>
+                                            <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12">
+                                                <div class="filed-btm">
+                                                    <label for="msg" class="form-label">Message</label>
+                                                    <textarea class="form-control" placeholder="Say Something" id="msg"></textarea>
+                                                    <div class="filed-icon">
+                                                        <img src="images/icons/message.svg" class="img-fluid" alt="field" />
+                                                    </div>
+                                                    <div id="error-msg" class="error-message">Please enter message</div>
+                                                </div>
+                                            </div>
+                                            <div class="col-12">
+                                                <div class="filed-btm mt-4 mb-0">
+                                                        <div class="red-btn-bg">
+                                                            <!-- <a href="" >Send</a> -->
+                                                            <button type="submit" class="red-btn text-decoration-none">Send</button>
+                                                        </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal fade shiping-modal" id="ship-track-modal" tabindex="-1" aria-labelledby="EnquiryModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-xxl modal-xl modal-lg modal-md modal-sm-12 modal-dialog-centered">
+                <div class="modal-content en-modal-form">
+                    <div class="form-title">
+                        <h2>Shipment Status</h2>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="modal-form">
+                            <div class="enq-area">
+                                <div class="enq-form">
+                                    <form>
+                                        <div class="row">
+                                            <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12">
+                                                <div class="filed-btm">
+                                                    <label for="tid" class="form-label">Track Id</label>
+                                                    <input type="text" class="form-control" id="tid" placeholder="AED098989" />
+                                                </div>
+                                            </div>
+                                            <div class="col-xxl-12 col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                                                <div class="filed-btm">
+                                                    <input type="text" class="form-control blue-bg" id="tid" readonly placeholder="Status:  Status of the item" />
+                                                </div>
+                                            </div>
+                                            <!-- <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12">
+                                                <div class="filed-btm">
+                                                    <label for="shipment" class="form-label">Origin of Shipment</label>
+                                                    <input type="text" class="form-control" id="shipment" placeholder="Origin of Shipment" />
+                                                </div>
+                                            </div>
+                                            <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12">
+                                                <div class="filed-btm">
+                                                    <label for="destination-shipment" class="form-label">Destination of Shipment</label>
+                                                    <input type="text" class="form-control" id="destination-shipment" placeholder="Destination of Shipment" />
+                                                </div>
+                                            </div> -->
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-two">
+                        <div class="row">
+                            <div class="col-xxl-8 col-xl-8 col-lg-12 col-md-12  col-sm-12 col-12 tracking-wrapper">
+                                <div class="title">
+                                    <h2>Tracking Details</h2>
+                                </div>
+                               <div class="tracking-content">
+                                <ul class="list-inline mb-0">
+                                    <li class="delived-arrow">
+                                        <div class="status-flex">
+                                            <div class="date-time delivered">
+                                                <h4>23 May</h4>
+                                                <p>15:09</p>
+                                            </div>
+                                            <div class="deliverd-img">
+                                                <img src="images/icons/deleverd.svg" class="img-fluid" alt="delevired">
+                                            </div>
+                                            <div class="status delivered">
+                                                <h4>Delivered</h4>
+                                                <p>Dubai - UAE</p>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="delived-arrow-green">
+                                        <div class="status-flex">
+                                            <div class="date-time on-way">
+                                                <h4>23 May</h4>
+                                                <p>15:09</p>
+                                            </div>
+                                            <div class="deliverd-img">
+                                                <img src="images/icons/out-delivery.svg" class="img-fluid" alt="delevired">
+                                            </div>
+                                            <div class="status on-way">
+                                                <h4>OUT FOR DELIVERY</h4>
+                                                <p>Dubai</p>
+                                            </div>
+                                            <div class="status-discription">
+                                                <p>Lorem Ipsum has been the industry's standard</p>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="delived-arrow-regular">
+                                        <div class="status-flex">
+                                            <div class="date-time">
+                                                <h4>23 May</h4>
+                                                <p>15:09</p>
+                                            </div>
+                                            <div class="deliverd-img">
+                                                <img src="images/icons/status-regular.svg" class="img-fluid" alt="delevired">
+                                            </div>
+                                            <div class="status">
+                                                <h4>ARRIVED AT AIRPORT</h4>
+                                                <p>Airport</p>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="delived-arrow-regular">
+                                        <div class="status-flex">
+                                            <div class="date-time">
+                                                <h4>23 May</h4>
+                                                <p>15:09</p>
+                                            </div>
+                                            <div class="deliverd-img">
+                                                <img src="images/icons/status-regular.svg" class="img-fluid" alt="delevired">
+                                            </div>
+                                            <div class="status">
+                                                <h4>SHIPMENT PROCESSING</h4>
+                                                <p>Airport</p>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="delived-arrow-regular">
+                                        <div class="status-flex">
+                                            <div class="date-time">
+                                                <h4>23 May</h4>
+                                                <p>15:09</p>
+                                            </div>
+                                            <div class="deliverd-img">
+                                                <img src="images/icons/status-regular.svg" class="img-fluid" alt="delevired">
+                                            </div>
+                                            <div class="status">
+                                                <h4>DEPARTED FROM AIRPORT</h4>
+                                                <p>Airport</p>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="delived-arrow-regular last">
+                                        <div class="status-flex">
+                                            <div class="date-time">
+                                                <h4>23 May</h4>
+                                                <p>15:09</p>
+                                            </div>
+                                            <div class="deliverd-img">
+                                                <img src="images/icons/status-regular.svg" class="img-fluid" alt="delevired">
+                                            </div>
+                                            <div class="status">
+                                                <h4>SHIPMENT RECEIVED</h4>
+                                                <p>MANILA - PHILIPPINES</p>
+                                            </div>
+                                        </div>
+                                    </li>
+                                </ul>
+                               </div>
+                            </div>
+                            <div class="col-xxl-4 col-xl-4 col-lg-4 col-md-6  col-sm-6 col-12 track-map-img">
+                                <div class="track-map">
+                                    <img src="images/track-map.png" class="img-fluid" alt="track map">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <script src="js/jquery.min.js"></script>
+        <script src="js/menu-scroll.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+        <!-- <script src="js/slick.min.js"></script> -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.0/slick.min.js" integrity="sha512-XtmMtDEcNz2j7ekrtHvOVR4iwwaD6o/FUJe6+Zq+HgcCsk3kj4uSQQR8weQ2QVj1o0Pk6PwYLohm206ZzNfubg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+        <script src="js/main.js"></script>
+        <script src="js/error-msg-form.js"></script>
+        <script src="js/modal-error-msg.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+        <script src="js/countup.js"></script>
+        <script>
+            AOS.init({
+                duration: 800,
+            });
+        </script>
+        <script>
+            $(".nav-link").on('click', function(e) {
+                e.preventDefault();
+                var target = $(this).attr('href');
+                $('html, body').animate({
+                scrollTop: ($(target).offset().top - 200)
+                }, 500);
+            });
+        </script>
+    </body>
+</html>

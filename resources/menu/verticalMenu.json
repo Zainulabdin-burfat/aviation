@@ -1,0 +1,49 @@
+{
+    "menu": [
+        {
+            "menuHeader": "App"
+        },
+        {
+            "url": "admin/dashboard",
+            "name": "Dashboard",
+            "icon": "menu-icon tf-icons ti ti-dashboard",
+            "slug": "dashboard.index"
+        },
+        {
+            "url": "admin/users",
+            "name": "User Management",
+            "icon": "menu-icon tf-icons ti ti-users",
+            "slug": "user.list"
+        },
+        {
+            "url": "admin/listings",
+            "name": "Listings",
+            "icon": "menu-icon tf-icons ti ti-users",
+            "slug": "listing.list"
+        },
+        {
+            "url": "admin/messages",
+            "name": "Messages",
+            "icon": "menu-icon tf-icons ti ti-users",
+            "slug": "message.list"
+        },
+        {
+            "url": "admin/transactions",
+            "name": "Transactions",
+            "icon": "menu-icon tf-icons ti ti-users",
+            "slug": "transaction.list"
+        },
+        {
+            "name": "Roles & Permissions",
+            "icon": "menu-icon tf-icons ti ti-lock",
+            "slug": "role.index",
+            "submenu": [
+                {
+                    "url": "admin/role",
+                    "name": "Roles",
+                    "slug": "role.index"
+                }
+            ]
+        }
+    ]
+}

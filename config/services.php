@@ -31,9 +31,9 @@ return [
         'region' => env('AWS_DEFAULT_REGION', 'us-east-1'),
     ],
 
-    'stripe' => [
-        'key' => env('STRIPE_KEY'),
-        'secret' => env('STRIPE_SECRET'),
+    'smsglobal' => [
+        'api_key' => env('SMSGLOBAL_API_KEY'),
+        'api_secret' => env('SMSGLOBAL_API_SECRET'),
     ],
 
 ];

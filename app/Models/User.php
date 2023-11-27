@@ -19,7 +19,9 @@ class User extends Authenticatable
     protected $fillable = [
         'first_name',
         'last_name',
+        'username',
         'email',
+        'phone',
         'password',
         'status',
         'created_by',
@@ -35,8 +37,28 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
-    public function listings()
+    public function branches()
     {
-        return $this->hasMany(Listing::class);
+        return $this->belongsToMany(Branch::class, 'branch_users', 'user_id', 'branch_id');
+    }
+
+    public function deliveryComments()
+    {
+        return $this->hasMany(DeliveryComment::class, 'user_id');
+    }
+
+    public function orders()
+    {
+        return $this->hasMany(Order::class, 'user_id');
+    }
+
+    public function notifications()
+    {
+        return $this->hasMany(Notification::class, 'user_id');
+    }
+
+    public function createdNotifications()
+    {
+        return $this->hasMany(Notification::class, 'created_by');
     }
 }

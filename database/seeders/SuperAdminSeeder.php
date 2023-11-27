@@ -17,17 +17,19 @@ class SuperAdminSeeder extends Seeder
     {
         Role::firstOrCreate(['name' => 'Super Admin']);
         Role::firstOrCreate(['name' => 'Admin']);
-        Role::firstOrCreate(['name' => 'Buyer']);
-        Role::firstOrCreate(['name' => 'Seller']);
+        Role::firstOrCreate(['name' => 'Branch Manager']);
+        Role::firstOrCreate(['name' => 'Delivery Agent']);
 
-        $superAdmin = User::where('email', 'superadmin@demo.com')->first();
+        $superAdmin = User::where('email', 'superadmin@knexpress.com')->first();
 
         if (!$superAdmin) {
             $superAdmin = User::create([
                 'first_name' => 'Super',
                 'last_name' => 'Admin',
-                'email' => 'superadmin@demo.com',
-                'password' => bcrypt('demo1234'),
+                'username' => 'superadmin@knexpress.com',
+                'email' => 'superadmin@knexpress.com',
+                'phone' => '12345678',
+                'password' => bcrypt('knexpress'),
                 'status' => 1,
                 'email_verified_at' => now(),
             ]);

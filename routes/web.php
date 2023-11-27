@@ -1,10 +1,8 @@
 <?php
 
-use App\Http\Controllers\ProfileController;
-use App\Http\Controllers\ListingController;
-use App\Http\Controllers\MessageController;
-use App\Http\Controllers\TransactionController;
+use App\Services\SmsGlobalService;
 use Illuminate\Support\Facades\Route;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -12,45 +10,16 @@ use Illuminate\Support\Facades\Route;
 |--------------------------------------------------------------------------
 |
 | Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider and all of them will
-| be assigned to the "web" middleware group. Make something great!
+| routes are loaded by the RouteServiceProvider within a group which
+| contains the "web" middleware group. Now create something great!
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', 'AuthController@showLoginForm')->name('loginform');
 
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth', 'verified'])->name('dashboard');
 
 Route::middleware(['permissionsWeb', 'auth'])->group(function () {
 
-    Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
-    Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
-    Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 
-    Route::resource('listings', ListingController::class);
-    Route::post('/listings/{listing}/purchase', [ListingController::class, 'purchase'])->name('listings.purchase');
-
-    Route::get('/transactions', [TransactionController::class, 'send']);
-    Route::post('/transactions/approve/{transaction}', [TransactionController::class, 'approve']);
-    Route::post('/transactions/decline/{transaction}', [TransactionController::class, 'decline']);
-
-    Route::post('/create-payment-intent', [TransactionController::class, 'createPaymentIntent']);
-    Route::post('/confirm-payment', [TransactionController::class, 'confirmPayment']);
-
-	Route::resource('/roles', \App\Http\Controllers\RoleController::class);
 
 });
-
-
-Route::prefix('messages')->middleware(['permissionsWeb', 'auth'])->group(function () {
-    Route::get('/', [MessageController::class, 'index'])->name('messages.index');
-    Route::get('/chat/{user}', [MessageController::class, 'chat'])->name('messages.chat');
-    Route::post('/send/{receiver_id}', [MessageController::class, 'send'])->name('messages.send');
-});
-
-
-require __DIR__.'/auth.php';

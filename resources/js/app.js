@@ -1,19 +1,4 @@
-import './bootstrap';
-
-import Alpine from 'alpinejs';
-
-window.Alpine = Alpine;
-
-Alpine.start();
-
-import Echo from 'laravel-echo';
-window.Pusher = require('pusher-js');
-
-window.Echo = new Echo({
-    broadcaster: 'pusher',
-    key: process.env.MIX_PUSHER_APP_KEY,
-    cluster: process.env.MIX_PUSHER_APP_CLUSTER,
-    forceTLS: true,
-    encrypted: true,
-});
-
+/*
+This file will be used by jetstream to add alpine.js. This file must exist to install jetstream successfully.
+You can remove it if you don't want to use jetstream.
+*/
