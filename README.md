@@ -114,6 +114,7 @@ Follow the instructions below to set up and run the application locally.
 ```bash
 composer install
 npm install
+npm run dev
 ```
 
 3. Set up the database and configure the environment:
