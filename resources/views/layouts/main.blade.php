@@ -30,7 +30,7 @@
                        href="{{ route('dashboard') }}">Dashboard</a>
                 </li>
 
-                @if(auth()->user()->hasPermissionTo('listings.index') || auth()->user()->hasDirectPermissionTo('listings.index'))
+                @if(auth()->user()->hasPermissionTo('listing.index') || auth()->user()->hasDirectPermissionTo('listing.index'))
 
                     <li class="nav-item">
                         <a class="nav-link {{ request()->is('listings*') ? 'active' : '' }}"
@@ -38,7 +38,7 @@
                     </li>
                 @endif
 
-                @if(auth()->user()->hasPermissionTo('messages.index') || auth()->user()->hasDirectPermissionTo('messages.index'))
+                @if(auth()->user()->hasPermissionTo('message.index') || auth()->user()->hasDirectPermissionTo('message.index'))
 
                     <li class="nav-item">
                         <a class="nav-link {{ request()->is('messages*') ? 'active' : '' }}"
@@ -46,7 +46,7 @@
                     </li>
                 @endif
 
-                @if(auth()->user()->hasPermissionTo('roles.index') || auth()->user()->hasDirectPermissionTo('roles.index'))
+                @if(auth()->user()->hasPermissionTo('role.index') || auth()->user()->hasDirectPermissionTo('role.index'))
                     <li class="nav-item">
                         <a class="nav-link {{ request()->is('roles*') ? 'active' : '' }}"
                            href="{{ route('roles.index') }}">Roles & Permissions</a>
@@ -57,7 +57,7 @@
             @auth
                 <div class="navbar-text">
                     <span class="text-white me-2">Hello, {{ auth()->user()->first_name }}</span>
-                    <span class="text-info me-2">({{ ucfirst(auth()->user()->roles[0]->name) }})</span>
+                    <span class="text-info me-2">({{ isset(auth()->user()->roles[0]) ? ucfirst(auth()->user()->roles[0]->name) : 'Super Admin' }})</span>
                     <form method="POST" action="{{ route('logout') }}" class="d-inline">
                         @csrf
                         <button type="submit" class="btn btn-link text-white">Logout</button>

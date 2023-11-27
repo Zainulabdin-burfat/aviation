@@ -81,7 +81,7 @@ class RoleController extends Controller
             list($module, $action) = explode('.', $permission->name);
             $groupedPermissions[$module][$permission->id] = $action;
         }
-        return view('content.role.edit-role', compact('role', 'groupedPermissions'));
+        return view('roles.edit-role', compact('role', 'groupedPermissions'));
     }
 
     /**

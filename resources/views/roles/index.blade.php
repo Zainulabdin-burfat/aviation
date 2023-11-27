@@ -18,7 +18,7 @@
                         <div class="d-flex justify-content-between align-items-end mt-1">
                             <div class="role-heading">
                                 <h4 class="mb-1">{{$role->name}}</h4>
-                                <a href="{{ route('role.edit', ['role' => $role->id]) }}"
+                                <a href="{{ route('roles.edit', ['role' => $role->id]) }}"
                                    class="role-edit-modal"><span>Edit Role</span></a>
                             </div>
                         </div>

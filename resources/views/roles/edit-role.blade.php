@@ -1,4 +1,6 @@
-
+@php
+	$rolePermissions = $role->permissions->pluck('id')->toArray();
+@endphp
 @extends('layouts.main')
 
 @section('content')
@@ -11,7 +13,7 @@
                     <p class="text-muted">Set role permissions</p>
                 </div>
                 <!-- Edit role form -->
-                <form id="editRoleForm" class="row g-3" method="POST" action="{{ route('role.update', ['role' => $role->id]) }}">
+                <form id="editRoleForm" class="row g-3" method="POST" action="{{ route('roles.update', ['role' => $role->id]) }}">
                     @csrf
                     @method('PUT')
                     <div class="col-4 mb-4">
