@@ -138,5 +138,9 @@ php artisan db:seed --class=SuperAdminSeeder
 ```bash
 php artisan serve
 ```
-
-6. Visit http://localhost:8000 in your browser.
+6. Super Admin Credentials
+```bash
+superadmin@demo.com
+demo1234
+```
+7. Visit http://localhost:8000 in your browser.
