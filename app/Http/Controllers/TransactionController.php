@@ -63,4 +63,9 @@ class TransactionController extends Controller
             'log_message' => $logMessage,
         ]);
     }
+	public function destroy()
+	{
+		//
+	}
+
 }
