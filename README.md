@@ -143,4 +143,7 @@ php artisan serve
 superadmin@demo.com
 demo1234
 ```
-7. Visit http://localhost:8000 in your browser.
+
+7. Give access to the Buyer and seller the necessary permissions by login from superadmin credentials
+
+8. Visit http://localhost:8000 in your browser.
