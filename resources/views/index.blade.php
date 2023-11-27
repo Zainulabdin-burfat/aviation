@@ -1,6 +1,3 @@
-//resources/views/index.blade.php
-
-
 </head>
 
 <body>

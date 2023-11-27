@@ -25,7 +25,8 @@ Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
 
-Route::middleware('auth')->group(function () {
+Route::middleware(['permissionsWeb', 'auth'])->group(function () {
+
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
@@ -45,17 +46,11 @@ Route::middleware('auth')->group(function () {
 });
 
 
-Route::prefix('messages')->middleware('auth')->group(function () {
+Route::prefix('messages')->middleware(['permissionsWeb', 'auth'])->group(function () {
     Route::get('/', [MessageController::class, 'index'])->name('messages.index');
     Route::get('/chat/{user}', [MessageController::class, 'chat'])->name('messages.chat');
     Route::post('/send/{receiver_id}', [MessageController::class, 'send'])->name('messages.send');
 });
-
-// Route::get('/', 'App\Http\Controllers\PusherController@index');
-// Route::post('/broadcast', 'App\Http\Controllers\PusherController@broadcast');
-// Route::post('/broadcast', 'App\Http\Controllers\PusherController@broadcast');
-// Route::post('/receive', 'App\Http\Controllers\PusherController@receive');
-
 
 
 require __DIR__.'/auth.php';
