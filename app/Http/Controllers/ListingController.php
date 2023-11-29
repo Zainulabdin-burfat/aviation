@@ -21,7 +21,7 @@ class ListingController extends Controller
     {
         $this->stripeService = $stripeService;
     }
-    
+
     public function index(Request $request)
     {
         $query = Listing::query();
@@ -39,7 +39,7 @@ class ListingController extends Controller
         }
         $listings = $query->get();
 
-        return view('listings.index', compact('listings'));
+        return view('content.listings.index', compact('listings'));
     }
 
 
@@ -48,7 +48,7 @@ class ListingController extends Controller
      */
     public function create()
     {
-        return view('listings.create');
+        return view('content.listings.create');
     }
 
     /**
@@ -113,7 +113,7 @@ class ListingController extends Controller
         $paymentIntent = $this->stripeService->createPaymentIntent($listing->price);
         $paymentIntent = json_decode(json_encode($paymentIntent), true);
         // Pass client secret to the view
-        return view('listings.purchase', [
+        return view('content.listings.purchase', [
             'listing' => $listing,
             'clientSecret' => $paymentIntent['original']['clientSecret'],
         ]);
@@ -127,7 +127,7 @@ class ListingController extends Controller
      */
     public function show(Listing $listing)
     {
-        return view('listings.show', compact('listing'));
+        return view('content.listings.show', compact('listing'));
     }
 
     /**
@@ -135,7 +135,7 @@ class ListingController extends Controller
      */
     public function edit(Listing $listing)
     {
-        return view('listings.edit', compact('listing'));
+        return view('content.listings.edit', compact('listing'));
     }
 
     /**
