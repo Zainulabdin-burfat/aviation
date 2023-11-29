@@ -19,19 +19,19 @@
             "url": "admin/listings",
             "name": "Listings",
             "icon": "menu-icon tf-icons ti ti-users",
-            "slug": "listing.list"
+            "slug": "listing.index"
         },
         {
             "url": "admin/messages",
             "name": "Messages",
             "icon": "menu-icon tf-icons ti ti-users",
-            "slug": "message.list"
+            "slug": "message.index"
         },
         {
             "url": "admin/transactions",
             "name": "Transactions",
             "icon": "menu-icon tf-icons ti ti-users",
-            "slug": "transaction.list"
+            "slug": "transaction.index"
         },
         {
             "name": "Roles & Permissions",
