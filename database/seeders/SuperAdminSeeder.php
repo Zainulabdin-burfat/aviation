@@ -20,16 +20,14 @@ class SuperAdminSeeder extends Seeder
         Role::firstOrCreate(['name' => 'Branch Manager']);
         Role::firstOrCreate(['name' => 'Delivery Agent']);
 
-        $superAdmin = User::where('email', 'superadmin@knexpress.com')->first();
+        $superAdmin = User::where('email', 'superadmin@demo.com')->first();
 
         if (!$superAdmin) {
             $superAdmin = User::create([
                 'first_name' => 'Super',
                 'last_name' => 'Admin',
-                'username' => 'superadmin@knexpress.com',
-                'email' => 'superadmin@knexpress.com',
-                'phone' => '12345678',
-                'password' => bcrypt('knexpress'),
+                'email' => 'superadmin@demo.com',
+                'password' => bcrypt('demo1234'),
                 'status' => 1,
                 'email_verified_at' => now(),
             ]);

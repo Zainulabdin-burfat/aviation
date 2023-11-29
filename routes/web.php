@@ -2,6 +2,7 @@
 
 use App\Services\SmsGlobalService;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Auth\AuthController;
 
 
 /*
@@ -15,7 +16,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', 'AuthController@showLoginForm')->name('loginform');
+Route::get('/', [AuthController::class, 'showLoginForm'])->name('loginform');
 
 
 Route::middleware(['permissionsWeb', 'auth'])->group(function () {

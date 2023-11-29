@@ -2,13 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Mail\GeneralMail;
-use App\Models\Branch;
 use App\Models\Role;
 use App\Models\User;
 use App\Http\Requests\StoreUserRequest;
 use App\Http\Requests\UpdateUserRequest;
-use App\Models\Country;
 use App\Models\UserRole;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -19,19 +16,7 @@ class UserController extends Controller
 {
     public function list()
     {
-        $users = User::all();
-        $userCount = $users->count();
-        $verified = User::whereNotNull('email_verified_at')->get()->count();
-        $notVerified = User::whereNull('email_verified_at')->get()->count();
-        $usersUnique = $users->unique(['email']);
-        $userDuplicates = $users->diff($usersUnique)->count();
-
-        return view('content.users.index', [
-            'totalUser' => $userCount,
-            'verified' => $verified,
-            'notVerified' => $notVerified,
-            'userDuplicates' => $userDuplicates,
-        ]);
+        return view('content.users.index');
     }
 
     /**
@@ -44,7 +29,6 @@ class UserController extends Controller
             'first_name',
             'email',
             'email_verified_at',
-            'phone',
             'status',
         ];
 
@@ -91,8 +75,6 @@ class UserController extends Controller
                 $nestedData['name'] = $user->first_name . ' ' . $user->last_name;
                 $nestedData['email'] = $user->email;
                 $nestedData['email_verified_at'] = $user->email_verified_at;
-                $nestedData['phone'] = $user->phone;
-                $nestedData['branch'] = isset($user->branches[0]) ? $user->branches[0]->name . ' (' . $user->branches[0]->branch_code . ')' : '-';
                 $nestedData['role'] = isset($user->roles[0]) ? $user->roles[0]->name : '-';
                 $nestedData['status'] = $user->status;
 
@@ -123,9 +105,7 @@ class UserController extends Controller
     public function create()
     {
         $roles = Role::get();
-        $branches = Branch::where('status', 1)->get();
-
-        return view('content.users.create', compact('roles', 'branches'));
+        return view('content.users.create', compact('roles'));
     }
 
     /**
@@ -141,31 +121,15 @@ class UserController extends Controller
             $user = User::create([
                 "first_name" => $request->input('first_name'),
                 "last_name" => $request->input('last_name'),
-                "username" => $request->input('username'),
                 "email" => $request->input('email'),
-                "phone" => $request->input('phone'),
                 "password" => bcrypt($password),
                 "created_by" => auth()->user()->id ?? 1,
-            ]);
-
-            DB::table('branch_users')->insert([
-                'user_id' => $user->id,
-                'branch_id' => $request->input('branch_id'),
             ]);
 
             $userRole = new UserRole();
             $userRole->user_id = $user->id;
             $userRole->role_id = $request->input('role_id');
             $userRole->save();
-
-            $user_details['name'] = $user->first_name . ' ' . $user->last_name;
-            $user_details['subject'] = "Thank you.";
-            $user_details['email'] = $user->email;
-            $user_details['message'] = "<a href='" . url("auth/confirm-user-mail/{$user->id}") . "'>click here to confirm your email</a><br><br>
-            Username: $user->email<br>
-            Password: $password";
-
-            Mail::send(new GeneralMail($user_details));
 
             DB::commit();
             return redirect()->back()->with(["status" => true, "message" => "Record added successfully..!"]);

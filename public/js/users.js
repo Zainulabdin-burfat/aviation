@@ -53,12 +53,6 @@
                             data: 'email_verified_at'
                         },
                         {
-                            data: 'phone'
-                        },
-                        {
-                            data: 'branch'
-                        },
-                        {
                             data: 'role'
                         },
                         {
@@ -151,26 +145,12 @@
                         {
                             targets: 5,
                             render: function render(data, type, full, meta) {
-                                var phone = full['phone'];
-                                return '<span class="user-email">' + phone + '</span>';
-                            }
-                        },
-                        {
-                            targets: 6,
-                            render: function render(data, type, full, meta) {
-                                var branch = full['branch'];
-                                return '<span class="user-email">' + branch + '</span>';
-                            }
-                        },
-                        {
-                            targets: 7,
-                            render: function render(data, type, full, meta) {
                                 var role = full['role'];
                                 return '<span class="user-email">' + role + '</span>';
                             }
                         },
                         {
-                            targets: 8,
+                            targets: 6,
                             className: 'text-center',
                             render: function render(data, type, full, meta) {
                                 let status = full.status;
@@ -252,53 +232,20 @@
                                     extend: 'csv',
                                     title: 'Users',
                                     text: '<i class="ti ti-file-text me-2" ></i>Csv',
-                                    className: 'dropdown-item',
-                                    exportOptions: {
-                                        columns: [2, 3],
-                                        // prevent avatar to be print
-                                        format: {
-                                            body: function body(inner, coldex, rowdex) {
-                                                if (inner.length <= 0) return inner;
-                                                var el = $.parseHTML(inner);
-                                                var result = '';
-                                                $.each(el, function (index, item) {
-                                                    if (item.classList.contains('user-name')) {
-                                                        result = result + item.lastChild.textContent;
-                                                    } else result = result + item.innerText;
-                                                });
-                                                return result;
-                                            }
-                                        }
-                                    }
+                                    className: 'dropdown-item'
                                 },
                                 {
                                     extend: 'excel',
                                     title: 'Users',
                                     text: '<i class="ti ti-file-spreadsheet me-2"></i>Excel',
-                                    className: 'dropdown-item',
-                                    exportOptions: {
-                                        columns: [2, 3],
-                                        // prevent avatar to be display
-                                        format: {
-                                            body: function body(inner, coldex, rowdex) {
-                                                if (inner.length <= 0) return inner;
-                                                var el = $.parseHTML(inner);
-                                                var result = '';
-                                                $.each(el, function (index, item) {
-                                                    if (item.classList.contains('user-name')) {
-                                                        result = result + item.lastChild.textContent;
-                                                    } else result = result + item.innerText;
-                                                });
-                                                return result;
-                                            }
-                                        }
-                                    }
+                                    className: 'dropdown-item'
                                 }
                             ]
                         },
                         {
                             text: '<i class="ti ti-plus me-0 me-sm-1"></i><span class="d-none d-sm-inline-block">Add New User</span>',
-                            className: 'add-new btn btn-primary create-record'
+                            className: 'add-new btn btn-primary create-record',
+                            enabled: hasPermission('user.create')
                         }
                     ],
                     // For responsive popup

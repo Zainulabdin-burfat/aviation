@@ -24,11 +24,9 @@ class UpdateUserRequest extends FormRequest
         return [
             'first_name' => 'required|string|max:30',
             'last_name' => 'nullable|string|max:30',
-            'username' => 'required|string|max:30|unique:users,username,' . $this->route('user')->id,
             'email' => 'required|string|email|unique:users,email,' . $this->route('user')->id,
             'phone' => 'required|string|max:20',
             'role_id' => 'required',
-            'branch_id' => 'required',
         ];
     }
 }

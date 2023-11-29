@@ -4,8 +4,7 @@ namespace App\Providers;
 
 use Illuminate\Support\Facades\Blade;
 use Illuminate\Support\ServiceProvider;
-use CreateControllerPermission;
-use App\Models\Permission;
+use App\Console\Commands\CreateControllerPermission;
 
 class PermissionsServiceProvider extends ServiceProvider
 {
@@ -21,31 +20,6 @@ class PermissionsServiceProvider extends ServiceProvider
     public function boot()
     {
         $this->registerBladeDirectives();
-
-        // $this->registerPassportServices();
-    }
-
-    public function registerPassportServices()
-    {
-        $permission_all = Permission::all();
-
-
-        $permissions = ['-'];
-
-        if ($permission_all) {
-            unset($permissions);
-            foreach ($permission_all as $permission) {
-                $permissions[$permission['name']] = $permission['name'];
-            }
-        }
-
-        // Passport::tokensCan($permissions);
-
-        // Passport::routes();
-
-        // Passport::tokensExpireIn(config('customrbac.tokensExpireIn'));
-        // Passport::refreshTokensExpireIn(config('customrbac.refreshTokensExpireIn'));
-        // Passport::personalAccessTokensExpireIn(config('customrbac.personalAccessTokensExpireIn'));
     }
 
     public function registerBladeDirectives()
@@ -57,14 +31,6 @@ class PermissionsServiceProvider extends ServiceProvider
             return "<?php if(Auth::check() && (Auth::user()->hasPermissionTo($permission) || Auth::user()->hasDirectPermissionTo($permission)) ){ ?>";
         });
         Blade::directive('endpermission', function () {
-            return "<?php } ?>";
-        });
-
-        // @role('admin') @endrole
-        Blade::directive('role', function ($role) {
-            return "<?php if(Auth::check() && Auth::user()->hasRole($role) ){ ?>";
-        });
-        Blade::directive('endrole', function () {
             return "<?php } ?>";
         });
     }

@@ -2,11 +2,7 @@
 
 namespace App\Helpers;
 
-use App\Models\SiteInformation;
-use App\Models\Service;
-use Buglinjo\LaravelWebp\Facades\Webp;
 use Config;
-use Illuminate\Support\Str;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Request;
 use PHPMailer\PHPMailer\PHPMailer;
@@ -188,159 +184,8 @@ class Helpers
             }
         }
     }
-    public static function mailConf($subject)
-    {
-        $siteInfo = SiteInformation::first();
-
-        require base_path("vendor/autoload.php");
-        $mail = new PHPMailer(true);
-        $mail->isSMTP();
-        $mail->CharSet = 'utf-8';
-        $mail->SMTPAuth = true;
-        // $mail->SMTPDebug  = 2;
-        $mail->SMTPSecure = env('MAIL_ENCRYPTION');
-        $mail->Host = env('MAIL_HOST');  //gmail has host > smtp.gmail.com
-        $mail->Port = env('MAIL_PORT'); //gmail has port > 587 . without double quotes
-        $mail->Username = env('MAIL_USERNAME'); //your username. actually your email
-        $mail->Password = env('MAIL_PASSWORD'); // your password. your mail password
-        $mail->setFrom(env('MAIL_FROM_ADDRESS'), $siteInfo->email_recipient);
-        // $mail->SetFrom = (env('MAIL_FROM_ADDRESS'));
-        $mail->Subject = $subject;
-        $mail->IsHTML(true);
-        return $mail;
-    }
-
-    public static function SendServiceEnquiryMail($enquiry)
-    {
-        $siteInfo = SiteInformation::first();
-
-        if ($siteInfo->logo)
-            $logo = url('storage/site_information/logo/') . '/' .$siteInfo->logo;
-        else
-            $logo = asset('app/dist/img/default-150x150.png');
-
-        $fb_icon = url('assets/web/images/facebook-white.png');
-        $insta_icon = url('assets/web/images/instagram-white.png');
-
-        $subject = ($enquiry->subject != NULL) ? $enquiry->subject : 'Service Enquiry';
-
-        $subject = $siteInfo->brand_name . ' - ' . $subject;
-        $mail = self::mailConf($subject);
-        if ($enquiry->service_id != NULL) {
-            $services = service::where('id',$enquiry->service_id)->get()->first();
-            $searchArr = [
-                "{name}", "{email}", "{phone}", "{service}", "{message}", "{type}", "{site_name}", "{facebook_url}", "{instagram_url}", "{logo}", "{fb_icon}", "{insta_icon}"
-            ];
-            $replaceArr = [
-                $enquiry->name, $enquiry->email, $enquiry->phone, @$services->title, $enquiry->message, ucwords($enquiry->type), $siteInfo->brand_name, $siteInfo->facebook_url, $siteInfo->instagram_url, $logo, $fb_icon, $insta_icon
-            ];
-            $body = file_get_contents(resource_path('views/content/mail_template/service_enquiry.blade.php'));
-        }
-        $body = str_replace($searchArr, $replaceArr, $body);
-        $mail->MsgHTML($body);
-        $mail->addAddress($siteInfo->email, $siteInfo->email_recepient);
-        if ($mail->send()) {
-            return true;
-        } else {
-            return false;
-        }
-    }
-
-    
-    public static function sendServiceEnquiryReply($enquiry)
-    {
-        $siteInfo = SiteInformation::first();
-
-        if ($siteInfo->logo)
-            $logo = Request::root() . '/' . $siteInfo->logo;
-        else
-            $logo = asset('app/dist/img/default-150x150.png');
-
-        $fb_icon = url('assets/web/images/facebook-white.png');
-        $insta_icon = url('assets/web/images/instagram-white.png');
-
-        $subject = ($enquiry->subject != NULL) ? $enquiry->subject : 'Request More Info';
-        $subject = $siteInfo->brand_name . ' - Request More Info Reply';
-        $mail = self::mailConf($subject);
-        $searchArr = ["{name}", "{service}", "{message}", "{reply}", "{site_name}", "{facebook_url}", "{instagram_url}", "{logo}", "{fb_icon}", "{insta_icon}"];
-        $replaceArr = [$enquiry->name, ($enquiry->service != 0) ? $enquiry->service->title : '', $enquiry->message, $enquiry->reply, $siteInfo->brand_name, $siteInfo->facebook_url, $siteInfo->instagram_url, $logo, $fb_icon, $insta_icon];
-        $body = file_get_contents(resource_path('views/mail_template/service_enquiry_reply.blade.php'));
-        $body = str_replace($searchArr, $replaceArr, $body);
-        $mail->MsgHTML($body);
-        $mail->addAddress($enquiry->email, $enquiry->name);
-        $mail->send();
-        if ($mail) {
-            return true;
-        } else {
-            return false;
-        }
-    }
 
 
-    public static function uploadFile($file, $location, $fileName = null)
-    {
-        if (!File::exists(public_path($location))) {
-            mkdir(public_path($location), 0777, true);
-        }
-        if ($fileName == null) {
-            list($name, $ext) = explode('.', $file->getClientOriginalName());
-            $fileName = $name;
-        }
-        $fileName = str_replace(' ', '-', strtolower($fileName));
-        $fileName = preg_replace('/[^A-Za-z0-9\-]/', '-', $fileName) . time() . '.' . $file->getClientOriginalExtension();
-        $fileName = str_replace('--', '-', $fileName);
-        $target = $location . $fileName;
-        if (File::exists(public_path($target))) {
-            $increment = 0;
-            list($name, $ext) = explode('.', $fileName);
-            while (File::exists(public_path($target))) {
-                $increment++;
-                $fileName = $name . '_' . $increment . '.' . $ext;
-                $target = $location . $fileName;
-            }
-        }
-        
-        // $file->move(public_path($location), $fileName);
-        // dd($target,$fileName);
-        return $target;
-    }
-    public static function uploadWebpImage($file, $location, $fileName)
-    {
-
-
-        $fileName = str_replace(' ', '-', strtolower($fileName));
-        $fileName = preg_replace('/[^A-Za-z0-9\-]/', '-', $fileName) . time() . '.webp';
-        $fileName = str_replace('--', '-', $fileName);
-
-        if (!File::exists(public_path($location))) {
-            File::makeDirectory(public_path($location), 0777, true);
-        }
-        $target = $location . $fileName;
-        if (File::exists(public_path($target))) {
-            $increment = 0;
-            list($name, $ext) = explode('.', $fileName);
-            while (File::exists(public_path($target))) {
-                $increment++;
-                $fileName = $name . '_' . $increment . '.' . $ext;
-                $target = $location . $fileName;
-            }
-        }
-        // $ext=$file->extension();
-        // if($ext == 'webp')
-        // {
-
-        // }
-        // else
-        // {
-        // Webp::make($file)->save(public_path($target));
-      
-        // }
-
-
-        return $target;
-    }
-
-    
     /**
      * print an image with webp on pages with picture tag.
      *
@@ -356,7 +201,7 @@ class Helpers
      public static function printImage($collection, $field, $webpField, $attributeField, $cssClass = null, $cssStyle = null, $height = null, $width = null)
      {
          $imageData = '<picture>';
- 
+
          if (!empty($collection->$webpField) && File::exists(public_path($collection->$webpField))) {
              $imageData .= '<source srcset="' . asset($collection->$webpField) . '" type="image/webp">';
          }
@@ -365,7 +210,7 @@ class Helpers
          } else {
              $imageData .= '<img src="' . asset('web/images/default-image.jpg') . '" alt="Default Image"';
          }
-        
+
          if ($cssClass) {
              $imageData .= ' class="' . $cssClass . '"';
          }
@@ -374,7 +219,7 @@ class Helpers
          }
          if ($width) {
              $imageData .= ' width="' . $width .'"';
-             
+
          }
          if ($height) {
              $imageData .= ' height="' . $height . '"';
@@ -385,11 +230,11 @@ class Helpers
               }else{
                   $imageData .= $attributeField;
               }
-             
+
          }
          $imageData .= ' ></picture>';
- 
+
          return $imageData;
      }
- 
+
 }

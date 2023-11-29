@@ -28,12 +28,6 @@
     <script src="{{ asset('assets/vendor/libs/@form-validation/umd/plugin-auto-focus/index.min.js') }}"></script>
 @endsection
 
-@section('page-script')
-    {{-- <script src="{{ asset('assets/js/modal-edit-user.js') }}"></script>
-    <script src="{{ asset('assets/js/app-user-view.js') }}"></script>
-    <script src="{{ asset('assets/js/app-user-view-account.js') }}"></script> --}}
-@endsection
-
 @section('content')
     <h4 class="py-3 mb-4">
         <span class="text-muted fw-light">User / View /</span> Account
@@ -84,11 +78,6 @@
                                 <span>{{ $user->phone ?? '-' }}</span>
                             </li>
                         </ul>
-                        <div class="d-flex justify-content-center">
-                            {{-- <a href="javascript:;" class="btn btn-primary me-3" data-bs-target="#editUser"
-                                data-bs-toggle="modal">Edit</a>
-                            <a href="javascript:;" class="btn btn-label-danger suspend-user">Suspended</a> --}}
-                        </div>
                     </div>
                 </div>
             </div>
@@ -96,51 +85,6 @@
 
         </div>
         <!--/ User Sidebar -->
-
-
-        <!-- User Content -->
-        <div class="col-xl-8 col-lg-7 col-md-7 order-0 order-md-1">
-            <!-- User Pills -->
-            {{-- <ul class="nav nav-pills flex-column flex-md-row mb-4">
-                <li class="nav-item"><a class="nav-link active" href="javascript:void(0);"><i
-                            class="ti ti-user-check ti-xs me-1"></i>Account</a></li>
-                <li class="nav-item"><a class="nav-link" href="{{ url('app/user/view/security') }}"><i
-                            class="ti ti-lock ti-xs me-1"></i>Security</a></li>
-                <li class="nav-item"><a class="nav-link" href="{{ url('app/user/view/billing') }}"><i
-                            class="ti ti-currency-dollar ti-xs me-1"></i>Billing & Plans</a></li>
-                <li class="nav-item"><a class="nav-link" href="{{ url('app/user/view/notifications') }}"><i
-                            class="ti ti-bell ti-xs me-1"></i>Notifications</a></li>
-                <li class="nav-item"><a class="nav-link" href="{{ url('app/user/view/connections') }}"><i
-                            class="ti ti-link ti-xs me-1"></i>Connections</a></li>
-            </ul> --}}
-            <!--/ User Pills -->
-
-            <!-- Project table -->
-            <div class="card mb-4">
-                <h5 class="card-header">User's Data</h5>
-                <div class="table-responsive mb-3">
-                    {{-- <table class="table datatable-project border-top">
-                        <thead>
-                            <tr>
-                                <th></th>
-                                <th>Project</th>
-                                <th class="text-nowrap">Total Task</th>
-                                <th>Progress</th>
-                                <th>Hours</th>
-                            </tr>
-                        </thead>
-                    </table> --}}
-                </div>
-            </div>
-            <!-- /Project table -->
-
-
-        </div>
-        <!--/ User Content -->
     </div>
 
-    <!-- Modal -->
-    @include('_partials/_modals/modal-edit-user')
-    @include('_partials/_modals/modal-upgrade-plan')
-    <!-- /Modal -->
 @endsection

@@ -112,24 +112,6 @@
                             </div>
 
                             <div class="mb-3 col-sm-6">
-                                <label for="branch_id" class="form-label">Branch</label>
-                                <select class="form-select select2" required id="branch_id" name="branch_id"
-                                        aria-label="Origin">
-                                    <option value="{{null}}">Select</option>
-                                    @foreach($branches as $branch)
-                                        <option
-                                            @if(isset($user->branches[0]->id) && $branch->id == $user->branches[0]->id) selected
-                                            @endif value="{{ $branch->id }}">
-                                            {{ $branch->name }} ({{ $branch->branch_code }})
-                                        </option>
-                                    @endforeach
-                                </select>
-                                @error('branch_id')
-                                <div class="text-danger">{{$message}}</div>
-                                @enderror
-                            </div>
-
-                            <div class="mb-3 col-sm-6">
                                 <label for="role" class="form-label">Role</label>
                                 <select class="form-select select2" id="role_id" name="role_id"
                                         aria-label="Role">
@@ -138,30 +120,16 @@
                                         @if(isset($user->roles[0]->id) && \App\Enums\RoleEnum::ADMIN == $user->roles[0]->id) selected
                                         @endif value="{{ \App\Enums\RoleEnum::ADMIN }}">{{ \App\Enums\RoleEnum::toString(2) }}</option>
                                     <option
-                                        @if(isset($user->roles[0]->id) && \App\Enums\RoleEnum::BRANCHMANAGER == $user->roles[0]->id) selected
-                                        @endif value="{{ \App\Enums\RoleEnum::BRANCHMANAGER }}">{{ \App\Enums\RoleEnum::toString(3) }}</option>
+                                        @if(isset($user->roles[0]->id) && \App\Enums\RoleEnum::BUYER == $user->roles[0]->id) selected
+                                        @endif value="{{ \App\Enums\RoleEnum::BUYER }}">{{ \App\Enums\RoleEnum::toString(3) }}</option>
                                     <option
-                                        @if(isset($user->roles[0]->id) && \App\Enums\RoleEnum::DELIVERYAGENT == $user->roles[0]->id) selected
-                                        @endif value="{{ \App\Enums\RoleEnum::DELIVERYAGENT }}">{{ \App\Enums\RoleEnum::toString(4) }}</option>
+                                        @if(isset($user->roles[0]->id) && \App\Enums\RoleEnum::SELLER == $user->roles[0]->id) selected
+                                        @endif value="{{ \App\Enums\RoleEnum::SELLER }}">{{ \App\Enums\RoleEnum::toString(4) }}</option>
                                 </select>
                                 @error('role_id')
                                 <div class="text-danger">{{$message}}</div>
                                 @enderror
                             </div>
-                            {{--                            <div class="mb-3 col-sm-6">--}}
-                            {{--                                <label for="role" class="form-label">Role</label>--}}
-                            {{--                                <select class="form-select select2" id="role_id" name="role_id"--}}
-                            {{--                                        aria-label="Role">--}}
-                            {{--                                    <option value="{{null}}">Select</option>--}}
-                            {{--                                    @foreach($roles as $role)--}}
-                            {{--                                        <option @if(isset($user->roles[0]->id) && $role->id == $user->roles[0]->id) selected--}}
-                            {{--                                                @endif value="{{ $role->id }}">{{ $role->name }}</option>--}}
-                            {{--                                    @endforeach--}}
-                            {{--                                </select>--}}
-                            {{--                                @error('role')--}}
-                            {{--                                <div class="text-danger">{{$message}}</div>--}}
-                            {{--                                @enderror--}}
-                            {{--                            </div>--}}
 
                         </div>
 

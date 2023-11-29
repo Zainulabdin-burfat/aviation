@@ -24,7 +24,6 @@
     <script>
         $(function () {
             $("#role_id").select2();
-            $("#branch_id").select2();
         });
     </script>
     <script>
@@ -108,48 +107,18 @@
                                 </div>
 
                                 <div class="mb-3 col-sm-6">
-                                    <label for="branch_id" class="form-label">Branch</label>
-                                    <select class="form-select select2" required id="branch_id" name="branch_id"
-                                            aria-label="Origin">
-                                        <option value="{{null}}">Select</option>
-                                        @foreach($branches as $branch)
-                                            <option value="{{ $branch->id }}">
-                                                {{ $branch->name }} ({{ $branch->branch_code }})
-                                            </option>
-                                        @endforeach
-                                    </select>
-                                    @error('branch_id')
-                                    <div class="text-danger">{{$message}}</div>
-                                    @enderror
-                                </div>
-
-                                <div class="mb-3 col-sm-6">
                                     <label for="role" class="form-label">Role</label>
                                     <select class="form-select select2" id="role_id" name="role_id"
                                             aria-label="Role">
                                         <option value="{{null}}">Select</option>
                                         <option value="{{ \App\Enums\RoleEnum::ADMIN }}">{{ \App\Enums\RoleEnum::toString(2) }}</option>
-                                        <option value="{{ \App\Enums\RoleEnum::BRANCHMANAGER }}">{{ \App\Enums\RoleEnum::toString(3) }}</option>
-                                        <option value="{{ \App\Enums\RoleEnum::DELIVERYAGENT }}">{{ \App\Enums\RoleEnum::toString(4) }}</option>
+                                        <option value="{{ \App\Enums\RoleEnum::BUYER }}">{{ \App\Enums\RoleEnum::toString(3) }}</option>
+                                        <option value="{{ \App\Enums\RoleEnum::SELLER }}">{{ \App\Enums\RoleEnum::toString(4) }}</option>
                                     </select>
                                     @error('role_id')
                                     <div class="text-danger">{{$message}}</div>
                                     @enderror
                                 </div>
-{{--                                --}}
-{{--                                <div class="mb-3 col-sm-6">--}}
-{{--                                    <label for="role" class="form-label">Role</label>--}}
-{{--                                    <select class="form-select select2" id="role_id" name="role_id"--}}
-{{--                                            aria-label="Role">--}}
-{{--                                        <option value="{{null}}">Select</option>--}}
-{{--                                        @foreach($roles as $role)--}}
-{{--                                            <option value="{{ $role->id }}">{{ $role->name }}</option>--}}
-{{--                                        @endforeach--}}
-{{--                                    </select>--}}
-{{--                                    @error('role')--}}
-{{--                                    <div class="text-danger">{{$message}}</div>--}}
-{{--                                    @enderror--}}
-{{--                                </div>--}}
 
                             </div>
 

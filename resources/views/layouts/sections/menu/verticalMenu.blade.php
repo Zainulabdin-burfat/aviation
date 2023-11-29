@@ -1,8 +1,5 @@
 @php
     $configData = Helper::appClasses();
-    use App\Models\SiteInformation;
-    $siteInformation = SiteInformation::where('deleted_at',NULL)->get()->first();
-    $dashboard_logo = isset($siteInformation->dashboard_logo) ? $siteInformation->dashboard_logo : '' ;
 @endphp
 <style>
     .app-brand-logo.demo {
@@ -20,15 +17,7 @@
     <!-- ! Hide app brand if navbar-full -->
     @if (!isset($navbarFull))
         <div class="app-brand demo">
-            <a href="{{ url('/') }}" class="app-brand-link">
-                @if (isset($dashboard_logo))
-                    <span class="app-brand-logo demo">
-                    <img
-                        src="{{ url('storage/site_information/dashboard_logo/') . '/' . $dashboard_logo }}"
-                        alt="" srcset="">
-                </span>
-                @endif
-            </a>
+            <a href="{{ url('/') }}" class="app-brand-link"></a>
 
             <a href="javascript:void(0);" class="layout-menu-toggle menu-link text-large ms-auto">
                 <i class="ti menu-toggle-icon d-none d-xl-block ti-sm align-middle"></i>
