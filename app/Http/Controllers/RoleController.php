@@ -29,14 +29,6 @@ class RoleController extends Controller
     }
 
     /**
-     * Show the form for creating a new resource.
-     */
-    public function create()
-    {
-        //
-    }
-
-    /**
      * Store a newly created resource in storage.
      */
     public function store(StoreRoleRequest $request)
@@ -62,14 +54,6 @@ class RoleController extends Controller
     }
 
     /**
-     * Display the specified resource.
-     */
-    public function show(Role $role)
-    {
-        //
-    }
-
-    /**
      * Show the form for editing the specified resource.
      */
     public function edit(Role $role)
@@ -92,10 +76,8 @@ class RoleController extends Controller
         try {
             DB::beginTransaction();
 
-            // $roleName = strtolower($request->input('role_name'));
             $permissions = $request->input('permissions', []);
 
-            // $role->update(['name' => $roleName]);
             $role->permissions()->sync($permissions);
 
             DB::commit();
@@ -112,7 +94,7 @@ class RoleController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Role $role)
+    public function destroy()
     {
         //
     }

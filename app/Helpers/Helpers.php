@@ -4,8 +4,6 @@ namespace App\Helpers;
 
 use Config;
 use Illuminate\Support\Facades\File;
-use Illuminate\Support\Facades\Request;
-use PHPMailer\PHPMailer\PHPMailer;
 
 class Helpers
 {
