@@ -24,7 +24,6 @@
     <script>
         $(function () {
             $("#role_id").select2();
-            $("#branch_id").select2();
         });
 
     </script>

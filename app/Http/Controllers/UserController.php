@@ -154,9 +154,7 @@ class UserController extends Controller
     public function edit(User $user)
     {
         $roles = Role::get();
-        $branches = Branch::where('status', 1)->get();
-
-        return view('content.users.edit', compact('user', 'roles', 'branches'));
+        return view('content.users.edit', compact('user', 'roles'));
     }
 
     /**
@@ -170,19 +168,11 @@ class UserController extends Controller
             $user->update([
                 'first_name' => $request->input('first_name'),
                 'last_name' => $request->input('last_name'),
-                'username' => $request->input('username'),
                 'email' => $request->input('email'),
-                'phone' => $request->input('phone'),
                 "updated_by" => auth()->user()->id ?? 1,
             ]);
 
             DB::table('role_user')->where('user_id', $user->id)->delete();
-            DB::table('branch_users')->where('user_id', $user->id)->delete();
-
-            DB::table('branch_users')->insert([
-                'user_id' => $user->id,
-                'branch_id' => $request->input('branch_id'),
-            ]);
 
             $userRole = new UserRole();
             $userRole->user_id = $user->id;
