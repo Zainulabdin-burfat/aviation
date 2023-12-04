@@ -43,6 +43,26 @@ class MessageController extends Controller
         return redirect()->back()->with(['status' => true, 'message' => 'Message sent successfully!']);
     }
 
+    public function receiveMessage(Request $request)
+    {
+        $request->validate([
+            'message' => 'required|string',
+        ]);
+
+        $receiverId = auth()->id();
+
+        $message = Message::create([
+            'from_user_id' => $request->input('sender_id'),
+            'to_user_id' => $receiverId,
+            'content' => $request->input('message'),
+        ]);
+
+        broadcast(new NewMessage($message));
+
+        return response()->json(['success' => true, 'message' => 'Message received successfully!']);
+    }
+
+
     /**
      * Remove the specified resource from storage.
      */

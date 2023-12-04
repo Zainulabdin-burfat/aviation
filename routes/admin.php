@@ -27,6 +27,7 @@ Route::middleware(['permissionsWeb', 'auth'])->group(function () {
         Route::get('/', [\App\Http\Controllers\MessageController::class, 'index'])->name('messages.index');
         Route::get('/chat/{user}', [\App\Http\Controllers\MessageController::class, 'chat'])->name('messages.chat');
         Route::post('/send/{receiver_id}', [\App\Http\Controllers\MessageController::class, 'send'])->name('messages.send');
+        Route::post('/receive', [\App\Http\Controllers\MessageController::class, 'receiveMessage'])->name('messages.receiveMessage');
     });
 
 });
