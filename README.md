@@ -122,6 +122,7 @@ npm run dev
 ```bash
 cp .env.example .env
 php artisan key:generate
+php artisan storage:link
 ```
 
 4. Update the .env file with your database and Stripe API credentials.
