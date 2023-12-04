@@ -165,7 +165,7 @@ h5.card-title {
                 <!-- Chat -->
                 <div class="messages">
                     @foreach($messages as $message)
-                        @include('receive', ['message' => $message])
+                        @include('content.receive', ['message' => $message])
                     @endforeach
                 </div>
                 <!-- End Chat -->
