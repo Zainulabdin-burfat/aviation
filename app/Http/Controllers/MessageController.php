@@ -15,13 +15,13 @@ class MessageController extends Controller
     {
         $messages = Message::with(['sender', 'receiver'])->latest()->get();
 
-        return view('messages.index', compact('messages'));
+        return view('content.messages.index', compact('messages'));
     }
 
     public function chat(User $user)
     {
         $messages = Message::where('from_user_id', auth()->user()->id)->where('to_user_id', $user->id)->get();
-        return view('messages.chat',['receiver' => $user, 'messages' => $messages]);
+        return view('content.messages.chat',['receiver' => $user, 'messages' => $messages]);
     }
 
     public function send(Request $request, $receiverId)
