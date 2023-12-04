@@ -21,6 +21,93 @@
 @endsection
 
 @section('page-script')
+<style>
+    .card {
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 15px;
+}
+.card-header {
+    background-color: #3498db;
+    color: #fff;
+    text-align: center;
+    border-radius: 8px 8px 0 0;
+}
+
+.card-title {
+    margin-bottom: 0;
+}
+.messages {
+    overflow-y: auto; /* Add scrollbar when messages overflow */
+}
+
+.message {
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+}
+
+.sender-message {
+    background-color: #3498db;
+    color: #fff;
+}
+
+.receiver-message {
+    background-color: #ecf0f1;
+    color: #333;
+}
+form {
+    display: flex;
+    margin-top: 10px;
+}
+
+#message {
+    flex: 1;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px 0 0 5px;
+}
+
+button {
+    padding: 8px;
+    border: 1px solid #3498db;
+    border-radius: 0 5px 5px 0;
+    background-color: #3498db;
+    color: #fff;
+    cursor: pointer;
+}
+.top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.top small {
+    color: #2ecc71; /* Green color for online status */
+}
+.messages::-webkit-scrollbar {
+    width: 8px;
+}
+
+.messages::-webkit-scrollbar-thumb {
+    background-color: #3498db;
+    border-radius: 4px;
+}
+
+.messages::-webkit-scrollbar-track {
+    background-color: #ecf0f1;
+}
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #ecf0f1;
+}
+
+h5.card-title {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+}
+
+</style>
 <script>
     const getPermissions = @json(auth()->user()->roles);
     const getDirectPermissions = @json(auth()->user()->permissions);
@@ -59,7 +146,6 @@
 @endsection
 
 @section('content')
-    <link rel="stylesheet" href="/style.css">
 
     <div class="card">
         <div class="card-header">
